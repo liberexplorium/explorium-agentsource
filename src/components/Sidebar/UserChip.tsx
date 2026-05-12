@@ -79,7 +79,7 @@ export function UserChip({ active, onSelectBilling, onSelectTopUp }: Props) {
         aria-haspopup="menu"
         aria-expanded={open}
       >
-        <div className={styles.avatar}>LI</div>
+        <div className={styles.avatar}>UN</div>
         <span className={styles.userEmail}>user.name@domain.com</span>
       </button>
     </div>
