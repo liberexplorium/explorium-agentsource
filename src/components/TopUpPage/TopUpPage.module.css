@@ -128,12 +128,14 @@
 .pkgPrice {
   display: flex;
   align-items: baseline;
-  gap: 2px;
+  gap: 4px;
   color: var(--text);
+  line-height: 1;
 }
 .pkgPriceCurrency {
   font-size: 32px;
   font-weight: 500;
+  line-height: 1;
 }
 .pkgPriceMain {
   font-size: 48px;
@@ -142,13 +144,15 @@
   line-height: 1;
 }
 .pkgPriceTail {
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
-  margin-left: 2px;
+  justify-content: space-between;
+  align-self: stretch;
+  margin-left: 4px;
+  padding: 2px 0;
   font-size: 13px;
-  color: var(--text-muted);
-  line-height: 1.1;
   font-weight: 500;
+  line-height: 1;
 }
 .pkgPriceCents { color: var(--text); font-weight: 600; }
 .pkgPriceUnit  { color: var(--text-muted); }
