@@ -17,7 +17,7 @@ import {
   StackIcon,
 } from './icons';
 
-type SidebarPage = 'overview' | 'billing' | 'topup';
+type SidebarPage = 'overview' | 'billing' | 'topup' | 'account';
 
 type Props = {
   page: SidebarPage;
@@ -93,9 +93,10 @@ export function Sidebar({ page, onNavigate }: Props) {
       <div className={`${styles.divider} ${styles.dividerFlush}`} />
 
       <UserChip
-        active={page === 'billing' || page === 'topup'}
+        active={page === 'billing' || page === 'topup' || page === 'account'}
         onSelectBilling={() => onNavigate('billing')}
         onSelectTopUp={() => onNavigate('topup')}
+        onSelectAccount={() => onNavigate('account')}
       />
     </aside>
   );

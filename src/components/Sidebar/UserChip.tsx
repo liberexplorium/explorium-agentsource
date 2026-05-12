@@ -6,9 +6,10 @@ type Props = {
   active?: boolean;
   onSelectBilling?: () => void;
   onSelectTopUp?: () => void;
+  onSelectAccount?: () => void;
 };
 
-export function UserChip({ active, onSelectBilling, onSelectTopUp }: Props) {
+export function UserChip({ active, onSelectBilling, onSelectTopUp, onSelectAccount }: Props) {
   const [open, setOpen] = useState(false);
   const wrapRef = useRef<HTMLDivElement>(null);
 
@@ -62,7 +63,14 @@ export function UserChip({ active, onSelectBilling, onSelectTopUp }: Props) {
             <ReceiptIcon />
             <span>Billing / Invoices</span>
           </button>
-          <button className={styles.userMenuItem} role="menuitem">
+          <button
+            className={styles.userMenuItem}
+            role="menuitem"
+            onClick={() => {
+              onSelectAccount?.();
+              setOpen(false);
+            }}
+          >
             <GearIcon />
             <span>Account Settings</span>
           </button>

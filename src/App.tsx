@@ -2,8 +2,9 @@ import { useState } from 'react';
 import { Sidebar } from './components/Sidebar/Sidebar';
 import { BillingPage } from './components/BillingPage/BillingPage';
 import { TopUpPage } from './components/TopUpPage/TopUpPage';
+import { AccountSettingsPage } from './components/AccountSettingsPage/AccountSettingsPage';
 
-export type Page = 'overview' | 'billing' | 'topup';
+export type Page = 'overview' | 'billing' | 'topup' | 'account';
 
 export default function App() {
   const [page, setPage] = useState<Page>('overview');
@@ -21,6 +22,7 @@ export default function App() {
       >
         {page === 'billing' && <BillingPage />}
         {page === 'topup' && <TopUpPage />}
+        {page === 'account' && <AccountSettingsPage />}
       </main>
     </div>
   );

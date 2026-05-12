@@ -1,0 +1,103 @@
+.page {
+  padding: 48px 56px 72px;
+  background: var(--exp-white);
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  color: var(--text);
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin: 0 0 48px;
+  color: var(--text);
+}
+
+/* Name + Associated Email row */
+.fieldsRow {
+  display: flex;
+  gap: 80px;
+  margin-bottom: 56px;
+  flex-wrap: wrap;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 200px;
+}
+
+.fieldLabel {
+  font-size: 14px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.fieldValue {
+  font-size: 18px;
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* Section blocks (Contact / Delete) */
+.section {
+  margin-bottom: 32px;
+}
+
+.sectionLabel {
+  font-size: 14px;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+/* Contact button — primary CTA pill */
+.contactBtn {
+  appearance: none;
+  border: 0;
+  background: var(--exp-lime);
+  color: var(--exp-midnight);
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 14px 36px;
+  border-radius: 60px;
+  cursor: pointer;
+  min-width: 200px;
+  text-align: center;
+}
+.contactBtn:hover { background: #C4E150; }
+
+/* Divider between sections */
+.divider {
+  border: 0;
+  height: 1px;
+  background: var(--line);
+  margin: 8px 0 32px;
+  max-width: 980px;
+}
+
+/* Delete button — destructive blush pill */
+.deleteBtn {
+  appearance: none;
+  background: #FFE0E1;
+  color: var(--exp-midnight);
+  border: 1px solid var(--exp-blush);
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 14px 36px;
+  border-radius: 60px;
+  cursor: pointer;
+  min-width: 200px;
+  text-align: center;
+}
+.deleteBtn:hover { background: #FFD2D4; }
+
+@media (max-width: 900px) {
+  .page { padding: 32px 24px; }
+  .title { font-size: 28px; }
+  .fieldsRow { gap: 32px; }
+}
