@@ -99,7 +99,7 @@
 
 .pkgCard {
   background: var(--exp-white);
-  border-radius: 16px;
+  border-radius: 0;
   border: 1px solid var(--line);
   overflow: hidden;
   display: flex;
