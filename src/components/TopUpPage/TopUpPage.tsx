@@ -121,7 +121,7 @@ export function TopUpPage() {
         <section className={styles.section}>
           <div className={styles.inlineRow}>
             <label htmlFor="maxocc" className={styles.inlineLabel}>
-              Select the maximum top-up ocurrences
+              Select the maximum top-up occurrences
             </label>
             <select
               id="maxocc"
