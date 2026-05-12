@@ -106,6 +106,10 @@
   flex-direction: column;
 }
 
+.pkgCardSelected {
+  border: 2px solid var(--exp-lime);
+}
+
 .pkgHeader {
   padding: 18px 20px;
   font-size: 15px;

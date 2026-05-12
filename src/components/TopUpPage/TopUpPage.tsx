@@ -89,7 +89,10 @@ export function TopUpPage() {
             {PACKAGES.map((p) => {
               const selected = pkg === p.key;
               return (
-                <div key={p.key} className={styles.pkgCard}>
+                <div
+                  key={p.key}
+                  className={`${styles.pkgCard} ${selected ? styles.pkgCardSelected : ''}`}
+                >
                   <div className={`${styles.pkgHeader} ${styles[`pkgHeader_${p.color}`]}`}>
                     {p.label}
                   </div>
