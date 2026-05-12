@@ -114,6 +114,7 @@
   justify-content: center;
   margin: 0 auto;
   width: fit-content;
+  text-decoration: none;
 }
 .downloadBtn:hover { background: var(--exp-paper); }
 

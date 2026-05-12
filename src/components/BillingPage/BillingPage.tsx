@@ -125,9 +125,14 @@ export function BillingPage() {
                 </td>
                 <td>{inv.invoiceNumber}</td>
                 <td className={styles.alignCenter}>
-                  <button className={styles.downloadBtn} aria-label={`Download invoice ${inv.invoiceNumber}`}>
+                  <a
+                    className={styles.downloadBtn}
+                    href="/sample-invoice.pdf"
+                    download={`${inv.invoiceNumber}.pdf`}
+                    aria-label={`Download invoice ${inv.invoiceNumber}`}
+                  >
                     <DownloadIcon />
-                  </button>
+                  </a>
                 </td>
               </tr>
             ))}
