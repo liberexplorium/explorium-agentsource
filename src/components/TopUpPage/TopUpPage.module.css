@@ -1,0 +1,312 @@
+.page {
+  padding: 48px 56px 72px;
+  background: var(--exp-white);
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  color: var(--text);
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin: 0;
+  color: var(--text);
+}
+
+/* Disable / Enable pill toggle */
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px;
+  background: var(--exp-paper);
+  border-radius: 60px;
+  border: 1px solid var(--line);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.toggleSeg,
+.toggleActive {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  font-weight: 600;
+  color: var(--text);
+  padding: 8px 22px;
+  border-radius: 60px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.toggleActive {
+  background: var(--exp-deep-teal);
+  color: var(--exp-cream);
+}
+
+/* Divider */
+.divider {
+  height: 1px;
+  background: var(--line);
+  margin: 32px 0 40px;
+}
+
+/* Body — visually-disabled appearance when Disable is on */
+.body {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+.body[disabled] {
+  opacity: 0.55;
+}
+
+/* Sections */
+.section {
+  margin-bottom: 36px;
+}
+
+.sectionLabel {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text);
+  margin: 0 0 16px;
+}
+
+.sectionDesc {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: -8px 0 16px;
+}
+
+/* Packages */
+.packages {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 980px;
+}
+
+.pkgCard {
+  background: var(--exp-white);
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.pkgHeader {
+  padding: 18px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--exp-white);
+  text-align: left;
+}
+.pkgHeader_teal   { background: var(--exp-deep-teal); }
+.pkgHeader_indigo { background: var(--exp-indigo); }
+.pkgHeader_coral  { background: var(--exp-coral); }
+
+.pkgBody {
+  padding: 28px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pkgPrice {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+  color: var(--text);
+}
+.pkgPriceCurrency {
+  font-size: 32px;
+  font-weight: 500;
+}
+.pkgPriceMain {
+  font-size: 48px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.pkgPriceTail {
+  display: inline-flex;
+  flex-direction: column;
+  margin-left: 2px;
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.1;
+  font-weight: 500;
+}
+.pkgPriceCents { color: var(--text); font-weight: 600; }
+.pkgPriceUnit  { color: var(--text-muted); }
+
+.pkgCredits {
+  margin: 0 0 24px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.pkgBtn,
+.pkgBtnSelected {
+  appearance: none;
+  border: 0;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 18px;
+  border-radius: 60px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+}
+.pkgBtn {
+  background: var(--exp-teal-300);
+  color: var(--text-muted);
+}
+.pkgBtn:hover { background: #b6cfd6; color: var(--text); }
+.pkgBtnSelected {
+  background: var(--exp-lime);
+  color: var(--exp-midnight);
+}
+
+/* Inline row (max occurrences) */
+.inlineRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.inlineLabel {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.select {
+  appearance: none;
+  -webkit-appearance: none;
+  background: var(--exp-white) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23004349' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>") no-repeat right 14px center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px 38px 10px 16px;
+  font: inherit;
+  font-size: 14px;
+  color: var(--text);
+  font-weight: 500;
+  cursor: pointer;
+  min-width: 140px;
+}
+.select:focus { outline: 2px solid var(--exp-teal-500); outline-offset: 1px; }
+
+/* Threshold buttons */
+.thresholdGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  max-width: 980px;
+}
+
+.thresholdBtn,
+.thresholdActive {
+  appearance: none;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid var(--line);
+  background: var(--exp-white);
+  color: var(--text);
+  flex: 1 1 0;
+  min-width: 120px;
+  text-align: center;
+}
+.thresholdBtn:hover { border-color: var(--exp-teal-500); }
+.thresholdActive {
+  background: var(--exp-deep-teal);
+  color: var(--exp-cream);
+  border-color: var(--exp-deep-teal);
+  font-weight: 600;
+}
+
+/* Payment link */
+.paymentLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: underline;
+}
+.paymentLink:hover { color: var(--exp-teal-500); }
+
+/* Actions row */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 8px;
+  max-width: 980px;
+}
+
+.clearBtn,
+.saveBtn,
+.saveBtnDisabled {
+  appearance: none;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 14px 36px;
+  border-radius: 60px;
+  cursor: pointer;
+  min-width: 200px;
+  text-align: center;
+}
+
+.clearBtn {
+  background: var(--exp-white);
+  color: var(--text);
+  border: 1px solid var(--line);
+}
+.clearBtn:hover { border-color: var(--exp-deep-teal); }
+
+.saveBtn {
+  background: var(--exp-lime);
+  color: var(--exp-midnight);
+  border: 0;
+}
+.saveBtn:hover { background: #C4E150; }
+
+.saveBtnDisabled {
+  background: var(--exp-teal-300);
+  color: var(--text-muted);
+  border: 0;
+  cursor: not-allowed;
+}
+
+@media (max-width: 900px) {
+  .page { padding: 32px 24px; }
+  .title { font-size: 28px; }
+  .packages { grid-template-columns: 1fr; }
+  .actions { flex-direction: column; align-items: stretch; }
+  .clearBtn, .saveBtn, .saveBtnDisabled { width: 100%; }
+}

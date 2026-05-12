@@ -5,9 +5,10 @@ import { CreditCardIcon, TopUpIcon, ReceiptIcon, GearIcon, LogoutIcon } from './
 type Props = {
   active?: boolean;
   onSelectBilling?: () => void;
+  onSelectTopUp?: () => void;
 };
 
-export function UserChip({ active, onSelectBilling }: Props) {
+export function UserChip({ active, onSelectBilling, onSelectTopUp }: Props) {
   const [open, setOpen] = useState(false);
   const wrapRef = useRef<HTMLDivElement>(null);
 
@@ -39,7 +40,14 @@ export function UserChip({ active, onSelectBilling }: Props) {
             <CreditCardIcon />
             <span>Pricing</span>
           </button>
-          <button className={styles.userMenuItem} role="menuitem">
+          <button
+            className={styles.userMenuItem}
+            role="menuitem"
+            onClick={() => {
+              onSelectTopUp?.();
+              setOpen(false);
+            }}
+          >
             <TopUpIcon />
             <span>Top-Up Credits</span>
           </button>

@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { Sidebar } from './components/Sidebar/Sidebar';
 import { BillingPage } from './components/BillingPage/BillingPage';
+import { TopUpPage } from './components/TopUpPage/TopUpPage';
 
-export type Page = 'overview' | 'billing';
+export type Page = 'overview' | 'billing' | 'topup';
 
 export default function App() {
   const [page, setPage] = useState<Page>('overview');
@@ -19,6 +20,7 @@ export default function App() {
         }}
       >
         {page === 'billing' && <BillingPage />}
+        {page === 'topup' && <TopUpPage />}
       </main>
     </div>
   );
