@@ -63,7 +63,12 @@ export function Sidebar({ page, onNavigate }: Props) {
         <NavItem icon={<DocIcon />} label="Documentation" external />
         <NavItem icon={<PuzzleIcon />} label="Integrations" external />
         <NavItem icon={<SqrtIcon />} label="Vibe Prospecting" external />
-        <NavItem icon={<StackIcon />} label="Our Data" external />
+        <NavItem
+          icon={<StackIcon />}
+          label="Our Data"
+          external
+          href="https://www.explorium.ai/data/?utm_source=agentsource"
+        />
       </nav>
 
       <div className={styles.spacer} />

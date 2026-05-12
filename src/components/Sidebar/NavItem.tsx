@@ -7,15 +7,23 @@ type Props = {
   label: string;
   active?: boolean;
   external?: boolean;
+  href?: string;
 };
 
-export function NavItem({ icon, label, active, external }: Props) {
+export function NavItem({ icon, label, active, external, href }: Props) {
   const className = [styles.navItem, active ? styles.navItemActive : '']
     .filter(Boolean)
     .join(' ');
 
+  const isExternalLink = external && !!href;
+
   return (
-    <a href="#" className={className}>
+    <a
+      href={href ?? '#'}
+      target={isExternalLink ? '_blank' : undefined}
+      rel={isExternalLink ? 'noopener noreferrer' : undefined}
+      className={className}
+    >
       <span className={styles.navIcon}>{icon}</span>
       <span className={styles.navLabel}>{label}</span>
       {external && (
