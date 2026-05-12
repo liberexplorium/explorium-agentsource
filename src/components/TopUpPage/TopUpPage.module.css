@@ -279,7 +279,7 @@
   font-size: 15px;
   font-weight: 600;
   padding: 14px 36px;
-  border-radius: 60px;
+  border-radius: 8px;
   cursor: pointer;
   min-width: 200px;
   text-align: center;
@@ -300,8 +300,8 @@
 .saveBtn:hover { background: #C4E150; }
 
 .saveBtnDisabled {
-  background: var(--exp-teal-300);
-  color: var(--text-muted);
+  background: var(--exp-n-200);
+  color: var(--exp-n-500);
   border: 0;
   cursor: not-allowed;
 }

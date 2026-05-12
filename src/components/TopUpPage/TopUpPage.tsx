@@ -172,7 +172,7 @@ export function TopUpPage() {
             className={styles.clearBtn}
             onClick={clearAll}
           >
-            Clear
+            Reset
           </button>
           <button
             type="button"
