@@ -4,7 +4,14 @@
   min-height: 100vh;
   font-family: var(--font-sans);
   color: var(--text);
+  display: flex;
+  flex-direction: column;
 }
+
+.bottomGroup {
+  margin-top: auto;
+}
+.bottomGroup .section { margin-bottom: 0; }
 
 .title {
   font-size: 36px;

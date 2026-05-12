@@ -23,14 +23,16 @@ export function AccountSettingsPage() {
         </button>
       </section>
 
-      <hr className={styles.divider} />
+      <div className={styles.bottomGroup}>
+        <hr className={styles.divider} />
 
-      <section className={styles.section}>
-        <div className={styles.sectionLabel}>Delete Account</div>
-        <button type="button" className={styles.deleteBtn}>
-          Delete my account
-        </button>
-      </section>
+        <section className={styles.section}>
+          <div className={styles.sectionLabel}>Delete Account</div>
+          <button type="button" className={styles.deleteBtn}>
+            Delete my account
+          </button>
+        </section>
+      </div>
     </div>
   );
 }
