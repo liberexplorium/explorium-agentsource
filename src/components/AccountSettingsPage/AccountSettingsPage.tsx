@@ -1,6 +1,10 @@
+import { useState } from 'react';
 import styles from './AccountSettingsPage.module.css';
+import { ContactUsModal } from './ContactUsModal';
 
 export function AccountSettingsPage() {
+  const [contactOpen, setContactOpen] = useState(false);
+
   return (
     <div className={styles.page}>
       <h1 className={styles.title}>Account Settings</h1>
@@ -18,7 +22,11 @@ export function AccountSettingsPage() {
 
       <section className={styles.section}>
         <div className={styles.sectionLabel}>Contact the Explorium Team</div>
-        <button type="button" className={styles.contactBtn}>
+        <button
+          type="button"
+          className={styles.contactBtn}
+          onClick={() => setContactOpen(true)}
+        >
           Contact Us
         </button>
       </section>
@@ -33,6 +41,10 @@ export function AccountSettingsPage() {
           </button>
         </section>
       </div>
+
+      {contactOpen && (
+        <ContactUsModal onClose={() => setContactOpen(false)} />
+      )}
     </div>
   );
 }
