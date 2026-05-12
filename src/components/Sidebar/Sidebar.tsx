@@ -60,7 +60,12 @@ export function Sidebar({ page, onNavigate }: Props) {
       <div className={styles.divider} />
 
       <nav className={styles.nav}>
-        <NavItem icon={<DocIcon />} label="Documentation" external />
+        <NavItem
+          icon={<DocIcon />}
+          label="Documentation"
+          external
+          href="https://developers.explorium.ai/reference/quick-starts/quick-starts"
+        />
         <NavItem
           icon={<PuzzleIcon />}
           label="Integrations"
