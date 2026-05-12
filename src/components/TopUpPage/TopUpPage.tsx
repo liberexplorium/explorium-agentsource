@@ -180,7 +180,7 @@ export function TopUpPage() {
         <section className={styles.section}>
           <p className={styles.sectionLabel}>Payment Method</p>
           <a href="#" className={styles.paymentLink}>
-            <span>Set payment method</span>
+            <span>Add payment method</span>
             <ArrowRight />
           </a>
         </section>
