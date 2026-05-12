@@ -218,11 +218,12 @@
 }
 .select:focus { outline: 2px solid var(--exp-teal-500); outline-offset: 1px; }
 
-/* Threshold buttons */
+/* Threshold — segmented control */
 .thresholdGroup {
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
   max-width: 980px;
 }
 
@@ -232,21 +233,37 @@
   font: inherit;
   font-size: 14px;
   font-weight: 500;
-  padding: 12px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  border: 1px solid var(--line);
-  background: var(--exp-white);
+  padding: 14px 20px;
+  border: 0;
+  background: transparent;
   color: var(--text);
+  cursor: pointer;
   flex: 1 1 0;
-  min-width: 120px;
+  min-width: 0;
   text-align: center;
+  position: relative;
 }
-.thresholdBtn:hover { border-color: var(--exp-teal-500); }
+.thresholdBtn:hover { background: var(--exp-paper); }
+
+/* Vertical divider on the left of every segment except the first */
+.thresholdGroup > button + button::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--line);
+}
+/* Hide dividers touching the active segment (its own left, and the one after) */
+.thresholdGroup > button.thresholdActive::before,
+.thresholdGroup > button.thresholdActive + button::before {
+  display: none;
+}
+
 .thresholdActive {
   background: var(--exp-deep-teal);
   color: var(--exp-cream);
-  border-color: var(--exp-deep-teal);
   font-weight: 600;
 }
 
