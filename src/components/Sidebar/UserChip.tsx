@@ -80,7 +80,7 @@ export function UserChip({ active, onSelectBilling, onSelectTopUp }: Props) {
         aria-expanded={open}
       >
         <div className={styles.avatar}>LI</div>
-        <span className={styles.userEmail}>liber.may@explorium.ai</span>
+        <span className={styles.userEmail}>user.name@domain.com</span>
       </button>
     </div>
   );
