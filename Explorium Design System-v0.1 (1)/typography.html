@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Explorium — Typography</title>
+<link rel="stylesheet" href="colors_and_type.css" />
+<style>
+  body { margin: 0; padding: 56px 64px 72px; background: var(--exp-cream); }
+  .wrap { max-width: 1200px; margin: 0 auto; }
+  header.hdr { display: flex; align-items: baseline; justify-content: space-between; padding-bottom: 20px; border-bottom: 1px solid var(--exp-teal-300); }
+  header.hdr h1 { font-family: var(--font-sans); font-weight: 500; font-size: 28px; color: var(--exp-deep-teal); margin: 0; letter-spacing: -0.01em; }
+  header.hdr .meta { font-family: var(--font-sans); font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--exp-teal-500); }
+
+  .row { display: grid; grid-template-columns: 220px 1fr 220px; gap: 32px; align-items: baseline; padding: 28px 0; border-bottom: 1px solid var(--exp-teal-300); }
+  .row .name { font-weight: 500; color: var(--exp-deep-teal); font-size: 14px; letter-spacing: .06em; text-transform: uppercase; }
+  .row .specs { font-family: var(--font-mono); font-size: 12px; color: var(--exp-teal-700); text-align: right; white-space: pre-line; line-height: 1.7; }
+  .row .sample { color: var(--exp-deep-teal); }
+
+  .section-head { font-family: var(--font-sans); font-weight: 600; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--exp-teal-500); margin: 48px 0 8px; }
+
+  .weights { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; padding: 28px 0 0; }
+  .weights .wt { border-top: 1px solid var(--exp-teal-300); padding-top: 14px; }
+  .weights .wt-label { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--exp-teal-700); font-family: var(--font-mono); }
+  .weights .wt-sample { font-size: 44px; color: var(--exp-deep-teal); margin-top: 6px; letter-spacing: -0.01em; }
+  .w-light   { font-weight: 300; }
+  .w-regular { font-weight: 400; }
+  .w-medium  { font-weight: 500; }
+  .w-semibold{ font-weight: 600; }
+  .w-bold    { font-weight: 700; }
+  .w-extrabold{ font-weight: 800; }
+  .w-heavy   { font-weight: 900; }
+
+  .mono-sample { font-family: var(--font-mono); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hdr">
+    <h1>Typography</h1>
+    <div class="meta">Gilroy · desktop scale</div>
+  </header>
+
+  <div class="section-head">Type scale</div>
+
+  <div class="row">
+    <div class="name">Display</div>
+    <div class="sample ex-display">B2B data and infra built for AI-SDR</div>
+    <div class="specs">Gilroy Regular
+68 / 75 · -2% tracking</div>
+  </div>
+
+  <div class="row">
+    <div class="name">Heading 1</div>
+    <div class="sample ex-h1">Setting a new standard for data-driven GTM</div>
+    <div class="specs">Gilroy Regular
+54 / 60 · -2% tracking</div>
+  </div>
+
+  <div class="row">
+    <div class="name">Heading 2</div>
+    <div class="sample ex-h2">What our customers say about us</div>
+    <div class="specs">Gilroy Regular
+42 / 48</div>
+  </div>
+
+  <div class="row">
+    <div class="name">Heading 3</div>
+    <div class="sample ex-h3">Proprietary enrichment</div>
+    <div class="specs">Gilroy Medium
+32 / 40</div>
+  </div>
+
+  <div class="row">
+    <div class="name">Heading 4</div>
+    <div class="sample ex-h4">High-quality sources, trusted by teams</div>
+    <div class="specs">Gilroy Medium
+24 / 32</div>
+  </div>
+
+  <div class="row">
+    <div class="name">Title</div>
+    <div class="sample ex-title">Dynamic connectivity</div>
+    <div class="specs">Gilroy Medium
+20 / 26</div>
+  </div>
+
+  <div class="row">
+    <div class="name">Eyebrow</div>
+    <div class="sample ex-eyebrow">Visual language</div>
+    <div class="specs">Gilroy SemiBold
+18 · .12 tracking · UPPER</div>
+  </div>
+
+  <div class="row">
+    <div class="name">Body LG</div>
+    <div class="sample ex-body-lg">Explorium curates trusted data — public databases to premium third-party providers — so revenue teams can build predictive pipelines.</div>
+    <div class="specs">Gilroy Regular
+18 / 28</div>
+  </div>
+
+  <div class="row">
+    <div class="name">Body</div>
+    <div class="sample ex-body">Explorium curates trusted data — public databases to premium third-party providers — so revenue teams can build predictive pipelines.</div>
+    <div class="specs">Gilroy Regular
+16 / 24</div>
+  </div>
+
+  <div class="row">
+    <div class="name">Caption</div>
+    <div class="sample ex-caption">Updated monthly · sourced from 200+ providers</div>
+    <div class="specs">Gilroy Regular
+14 / 20</div>
+  </div>
+
+  <div class="row">
+    <div class="name">Mono</div>
+    <div class="sample mono-sample" style="font-size:14px;color:var(--exp-teal-700)">POST /v1/enrich · 200 OK · 84 ms</div>
+    <div class="specs">Space Mono
+14 / 20</div>
+  </div>
+
+  <div class="section-head">Weights</div>
+  <div class="weights">
+    <div class="wt"><div class="wt-label">300 · Light</div><div class="wt-sample w-light">Aa Gg</div></div>
+    <div class="wt"><div class="wt-label">400 · Regular</div><div class="wt-sample w-regular">Aa Gg</div></div>
+    <div class="wt"><div class="wt-label">500 · Medium</div><div class="wt-sample w-medium">Aa Gg</div></div>
+    <div class="wt"><div class="wt-label">600 · SemiBold</div><div class="wt-sample w-semibold">Aa Gg</div></div>
+    <div class="wt"><div class="wt-label">700 · Bold</div><div class="wt-sample w-bold">Aa Gg</div></div>
+    <div class="wt"><div class="wt-label">800 · ExtraBold</div><div class="wt-sample w-extrabold">Aa Gg</div></div>
+    <div class="wt"><div class="wt-label">900 · Heavy</div><div class="wt-sample w-heavy">Aa Gg</div></div>
+    <div class="wt"><div class="wt-label">Italic</div><div class="wt-sample w-regular" style="font-style:italic">Aa Gg</div></div>
+  </div>
+</div>
+</body>
+</html>

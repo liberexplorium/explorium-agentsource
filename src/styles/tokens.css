@@ -1,0 +1,116 @@
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/fonts/Gilroy-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/fonts/Gilroy-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/fonts/Gilroy-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/fonts/Gilroy-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Brand */
+  --exp-deep-teal:      #004349;
+  --exp-midnight:       #0A2540;
+  --exp-teal-700:       #336365;
+  --exp-teal-600:       #2C4546;
+  --exp-teal-500:       #005050;
+  --exp-teal-300:       #C4DBE1;
+  --exp-mint:           #E5FFE4;
+
+  /* Accents */
+  --exp-lime:           #D1EE71;
+  --exp-coral:          #FFA364;
+  --exp-peach:          #F8AA60;
+  --exp-blush:          #FE9193;
+  --exp-indigo:         #9193FE;
+  --exp-seafoam:        #81D6BA;
+  --exp-green:          #54B092;
+  --exp-green-strong:   #4DCCA8;
+
+  /* Surfaces */
+  --exp-cream:          #FFFCF5;
+  --exp-paper:          #F8F6F2;
+  --exp-white:          #FFFFFF;
+
+  /* Neutrals */
+  --exp-n-100: #F5F5F5;
+  --exp-n-200: #E5E5E5;
+  --exp-n-300: #CCCCCC;
+  --exp-n-400: #BABABA;
+  --exp-n-500: #8F8F8F;
+  --exp-n-600: #737373;
+
+  /* Type */
+  --font-sans:  'Gilroy', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono:  'Space Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --fs-display: 68px;
+  --fs-h1:      54px;
+  --fs-h2:      42px;
+  --fs-h3:      32px;
+  --fs-h4:      24px;
+  --fs-title:   20px;
+  --fs-body-lg: 18px;
+  --fs-body:    16px;
+  --fs-caption: 14px;
+  --fs-small:   12px;
+
+  --lh-tight:  1.1;
+  --lh-snug:   1.25;
+  --lh-body:   1.5;
+
+  --ls-tight:  -0.02em;
+  --ls-cta:     0.05em;
+
+  /* Spacing */
+  --s-1:  4px;   --s-2:  8px;   --s-3: 12px;
+  --s-4: 16px;   --s-5: 24px;   --s-6: 32px;
+  --s-7: 48px;   --s-8: 64px;   --s-9: 96px;
+
+  /* Radii */
+  --r-pill:  60px;
+  --r-lg:    24px;
+  --r-md:    16px;
+  --r-sm:     8px;
+  --r-xs:     4px;
+
+  /* Shadows */
+  --sh-card: 0 1px 2px rgba(0,67,73,.04), 0 8px 24px rgba(0,67,73,.06);
+  --sh-lift: 0 4px 8px rgba(0,67,73,.06), 0 24px 48px rgba(0,67,73,.10);
+
+  /* Semantic */
+  --bg:         var(--exp-cream);
+  --surface:    var(--exp-white);
+  --text:       var(--exp-deep-teal);
+  --text-muted: var(--exp-teal-700);
+  --line:       var(--exp-teal-300);
+  --cta-bg:     var(--exp-lime);
+  --cta-text:   var(--exp-midnight);
+
+  /* On-dark sidebar tokens */
+  --side-row-hover:   rgba(255,255,255,.06);
+  --side-row-active:  rgba(255,255,255,.08);
+  --side-divider:     rgba(196,219,225,.16);
+  --side-track:       rgba(255,255,255,.10);
+  --side-muted:       rgba(255, 252, 245, .65);
+}

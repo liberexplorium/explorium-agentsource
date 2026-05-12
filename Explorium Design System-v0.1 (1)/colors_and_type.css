@@ -1,0 +1,192 @@
+/* ============================================================
+   Explorium Design System — Colors & Type
+   Extracted from production Figma (Design System 2025).
+   ============================================================ */
+
+/* ---- Fonts ------------------------------------------------- */
+@font-face {
+  font-family: 'Gilroy';
+  src: url('fonts/gilroy-light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('fonts/gilroy-regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('fonts/gilroy-regularitalic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('fonts/gilroy-medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('fonts/gilroy-mediumitalic.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('fonts/gilroy-semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('fonts/gilroy-bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('fonts/gilroy-extrabold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('fonts/gilroy-heavy.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* ---- Brand ---------------------------------------------- */
+  --exp-deep-teal: #004349;       /* primary text, dark surfaces */
+  --exp-midnight: #0A2540;        /* button text / deep accents */
+  --exp-teal-700: #336365;        /* body-dark / secondary */
+  --exp-teal-600: #2C4546;        /* button text on cream */
+  --exp-teal-500: #005050;        /* interactive accents */
+  --exp-teal-300: #C4DBE1;        /* line work, hairlines */
+  --exp-mint:     #E5FFE4;        /* soft highlight */
+
+  /* Accents (signature) */
+  --exp-lime:     #D1EE71;        /* primary CTA */
+  --exp-coral:    #FFA364;        /* secondary accent */
+  --exp-peach:    #F8AA60;        /* warm variant */
+  --exp-blush:    #FE9193;        /* tag/accent */
+  --exp-indigo:   #9193FE;        /* tag/accent */
+  --exp-seafoam:  #81D6BA;        /* success-soft */
+  --exp-green:    #54B092;        /* success */
+  --exp-green-strong: #4DCCA8;    /* success bold */
+
+  /* Surfaces */
+  --exp-cream:    #FFFCF5;        /* page background */
+  --exp-paper:    #F8F6F2;        /* subtle surface */
+  --exp-white:    #FFFFFF;
+  --exp-ink:      #000000;
+
+  /* Neutrals */
+  --exp-n-100: #F5F5F5;
+  --exp-n-200: #E5E5E5;
+  --exp-n-300: #CCCCCC;
+  --exp-n-400: #BABABA;
+  --exp-n-500: #8F8F8F;
+  --exp-n-600: #737373;
+
+  /* ---- Type ---------------------------------------------- */
+  --font-sans: 'Gilroy', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'Space Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Type scale — desktop */
+  --fs-display: 68px;   /* hero */
+  --fs-h1:      54px;
+  --fs-h2:      42px;
+  --fs-h3:      32px;
+  --fs-h4:      24px;
+  --fs-title:   20px;
+  --fs-body-lg: 18px;
+  --fs-body:    16px;
+  --fs-caption: 14px;
+  --fs-small:   12px;
+
+  --lh-tight: 1.1;
+  --lh-snug:  1.25;
+  --lh-body:  1.5;
+
+  --ls-tight: -0.02em;
+  --ls-cta:    0.05em;
+
+  /* ---- Radii / shadow / spacing ------------------------- */
+  --r-pill:   60px;
+  --r-lg:     24px;
+  --r-md:     16px;
+  --r-sm:     8px;
+  --r-xs:     4px;
+
+  --sh-card:  0 1px 2px rgba(0,67,73,.04), 0 8px 24px rgba(0,67,73,.06);
+  --sh-lift:  0 4px 8px rgba(0,67,73,.06), 0 24px 48px rgba(0,67,73,.10);
+
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 64px;
+  --s-9: 96px;
+
+  /* ---- Semantic ----------------------------------------- */
+  --bg:            var(--exp-cream);
+  --surface:       var(--exp-white);
+  --text:          var(--exp-deep-teal);
+  --text-muted:    var(--exp-teal-700);
+  --line:          var(--exp-teal-300);
+  --cta-bg:        var(--exp-lime);
+  --cta-text:      var(--exp-midnight);
+}
+
+/* ---- Base utility classes ---------------------------------- */
+html, body { background: var(--bg); color: var(--text); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+
+.ex-display { font-family: var(--font-sans); font-weight: 400; font-size: var(--fs-display); line-height: var(--lh-tight); letter-spacing: var(--ls-tight); color: var(--exp-deep-teal); }
+.ex-h1      { font-family: var(--font-sans); font-weight: 400; font-size: var(--fs-h1); line-height: var(--lh-tight); letter-spacing: var(--ls-tight); color: var(--exp-deep-teal); }
+.ex-h2      { font-family: var(--font-sans); font-weight: 400; font-size: var(--fs-h2); line-height: 48px; color: var(--exp-deep-teal); }
+.ex-h3      { font-family: var(--font-sans); font-weight: 500; font-size: var(--fs-h3); line-height: var(--lh-snug); color: var(--exp-deep-teal); }
+.ex-h4      { font-family: var(--font-sans); font-weight: 500; font-size: var(--fs-h4); line-height: 1.3; color: var(--exp-deep-teal); }
+.ex-title   { font-family: var(--font-sans); font-weight: 500; font-size: var(--fs-title); line-height: var(--lh-snug); color: var(--exp-deep-teal); }
+.ex-body-lg { font-family: var(--font-sans); font-weight: 400; font-size: var(--fs-body-lg); line-height: 28px; color: var(--exp-teal-700); }
+.ex-body    { font-family: var(--font-sans); font-weight: 400; font-size: var(--fs-body); line-height: 24px; color: var(--exp-teal-700); }
+.ex-caption { font-family: var(--font-sans); font-weight: 400; font-size: var(--fs-caption); line-height: 20px; color: var(--exp-teal-700); }
+.ex-eyebrow { font-family: var(--font-sans); font-weight: 600; font-size: var(--fs-body-lg); letter-spacing: 0.12em; text-transform: uppercase; color: var(--exp-teal-500); }
+.ex-cta-label { font-family: var(--font-sans); font-weight: 700; font-size: var(--fs-body-lg); letter-spacing: var(--ls-cta); }
+
+/* Buttons */
+.ex-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  height: 48px; padding: 0 26px; border-radius: var(--r-pill);
+  font-family: var(--font-sans); font-weight: 700; font-size: 16px;
+  letter-spacing: var(--ls-cta); border: 1px solid transparent; cursor: pointer;
+  transition: transform .12s ease, background .12s ease, color .12s ease, border-color .12s ease;
+}
+.ex-btn--primary   { background: var(--exp-lime);   color: var(--exp-midnight); }
+.ex-btn--primary:hover   { background: #C4E150; }
+.ex-btn--secondary { background: var(--exp-deep-teal); color: var(--exp-cream); }
+.ex-btn--secondary:hover { background: #002E33; }
+.ex-btn--ghost     { background: transparent; color: var(--exp-deep-teal); border-color: var(--exp-teal-300); }
+.ex-btn--ghost:hover     { background: var(--exp-white); }
+.ex-btn--lg { height: 56px; padding: 0 32px; font-size: 18px; }
+.ex-btn--sm { height: 40px; padding: 0 20px; font-size: 14px; }
+
+/* Link */
+.ex-link { color: var(--exp-teal-500); text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 1px; font-weight: 500; }
+.ex-link:hover { color: var(--exp-deep-teal); }

@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Explorium — Brand</title>
+<link rel="stylesheet" href="colors_and_type.css" />
+<style>
+  body { margin: 0; padding: 56px 64px 72px; background: var(--exp-cream); }
+  .wrap { max-width: 1200px; margin: 0 auto; }
+  header.hdr { display: flex; align-items: baseline; justify-content: space-between; padding-bottom: 20px; border-bottom: 1px solid var(--exp-teal-300); }
+  header.hdr h1 { font-family: var(--font-sans); font-weight: 500; font-size: 28px; color: var(--exp-deep-teal); margin: 0; letter-spacing: -0.01em; }
+  header.hdr .meta { font-family: var(--font-sans); font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--exp-teal-500); }
+  .section-head { font-family: var(--font-sans); font-weight: 600; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--exp-teal-500); margin: 40px 0 16px; }
+
+  .logo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .logo-tile {
+    border: 1px solid var(--exp-teal-300); border-radius: 16px; overflow: hidden;
+    display: flex; flex-direction: column;
+  }
+  .logo-tile .stage {
+    height: 180px; display: flex; align-items: center; justify-content: center;
+  }
+  .logo-tile .stage img { width: 62%; height: auto; }
+  .logo-tile .meta { padding: 14px 18px; background: var(--exp-white); border-top: 1px solid var(--exp-teal-300); font-family: var(--font-mono); font-size: 12px; color: var(--exp-teal-700); display:flex; justify-content: space-between; }
+  .logo-tile .meta strong { color: var(--exp-deep-teal); }
+
+  .clear-space { padding: 28px; background: var(--exp-white); border-radius: 16px; border: 1px solid var(--exp-teal-300); }
+  .clear-stage { position: relative; height: 200px; background: var(--exp-cream); border-radius: 12px; display:flex; align-items: center; justify-content: center; overflow:hidden; }
+  .clear-stage img { width: 240px; height: auto; position: relative; z-index: 2; }
+  .clear-guides { position:absolute; inset: 0; display:flex; align-items:center; justify-content:center; }
+  .clear-guides::before, .clear-guides::after { content:""; position:absolute; border: 1px dashed rgba(0,67,73,.25); }
+  .clear-guides::before { width: 320px; height: 90px; }
+  .clear-guides::after { width: 360px; height: 130px; }
+
+  .misuse { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
+  .mis-tile { border: 1px solid var(--exp-teal-300); border-radius: 12px; overflow: hidden; background: var(--exp-white); }
+  .mis-stage { height: 120px; display:flex; align-items:center; justify-content:center; padding: 12px; position: relative; }
+  .mis-stage img { max-width: 80%; max-height: 70%; }
+  .mis-stage::after { content: "✕"; position:absolute; top:8px; right:12px; color: #C94A4A; font-weight: 700; font-size: 16px; }
+  .mis-stage.ok::after { content: "✓"; color: #2B8A4B; }
+  .mis-cap { border-top: 1px solid var(--exp-teal-300); padding: 10px 12px; font-size: 12px; color: var(--exp-teal-700); font-family: var(--font-mono); }
+
+  .fav-grid { display:flex; gap:20px; align-items:center; }
+  .fav {
+    background: var(--exp-white); border: 1px solid var(--exp-teal-300); border-radius: 12px;
+    display:flex; align-items:center; justify-content:center; padding: 14px;
+  }
+
+  .voice { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .voice .card { background: var(--exp-white); border: 1px solid var(--exp-teal-300); border-radius: 16px; padding: 24px; }
+  .voice .card h3 { margin:0 0 8px; font-family: var(--font-sans); font-weight: 500; font-size: 20px; color: var(--exp-deep-teal); }
+  .voice .card p  { margin: 0; color: var(--exp-teal-700); font-size: 15px; line-height: 22px; }
+  .voice ul { margin: 8px 0 0; padding-left: 20px; color: var(--exp-teal-700); font-size: 14px; line-height: 22px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hdr">
+    <h1>Brand</h1>
+    <div class="meta">Logo · clear space · voice</div>
+  </header>
+
+  <div class="section-head">Logo lockups</div>
+  <div class="logo-grid">
+    <div class="logo-tile">
+      <div class="stage" style="background: var(--exp-cream)"><img src="assets/explorium-logo.svg" alt="Explorium" /></div>
+      <div class="meta"><span>Primary · on cream</span><strong>#FFFCF5</strong></div>
+    </div>
+    <div class="logo-tile">
+      <div class="stage" style="background: var(--exp-white)"><img src="assets/explorium-logo.svg" alt="Explorium" /></div>
+      <div class="meta"><span>On white</span><strong>#FFFFFF</strong></div>
+    </div>
+    <div class="logo-tile">
+      <div class="stage" style="background: var(--exp-deep-teal); filter: none;">
+        <img src="assets/explorium-logo.svg" alt="Explorium" style="filter: brightness(0) invert(1)" />
+      </div>
+      <div class="meta"><span>Inverted · on deep teal</span><strong>#004349</strong></div>
+    </div>
+    <div class="logo-tile">
+      <div class="stage" style="background: var(--exp-lime)"><img src="assets/explorium-logo.svg" alt="Explorium" /></div>
+      <div class="meta"><span>On lime</span><strong>#D1EE71</strong></div>
+    </div>
+    <div class="logo-tile">
+      <div class="stage" style="background: var(--exp-teal-300)"><img src="assets/explorium-logo.svg" alt="Explorium" /></div>
+      <div class="meta"><span>On teal 300</span><strong>#C4DBE1</strong></div>
+    </div>
+    <div class="logo-tile">
+      <div class="stage" style="background: var(--exp-coral)"><img src="assets/explorium-logo.svg" alt="Explorium" /></div>
+      <div class="meta"><span>On coral (accent)</span><strong>#FFA364</strong></div>
+    </div>
+  </div>
+
+  <div class="section-head">Clear space &amp; favicon</div>
+  <div style="display:grid;grid-template-columns: 2fr 1fr; gap: 20px">
+    <div class="clear-space">
+      <div class="clear-stage">
+        <div class="clear-guides"></div>
+        <img src="assets/explorium-logo.svg" alt="Explorium" />
+      </div>
+      <div style="font-family:var(--font-mono); font-size:12px; color:var(--exp-teal-700); margin-top:14px">
+        Minimum clear space = height of the wordmark cap. Never set type, graphics or edges inside this margin.
+      </div>
+    </div>
+    <div class="clear-space">
+      <div class="fav-grid">
+        <div class="fav" style="width:72px;height:72px"><img src="assets/favicon.svg" style="width:44px;height:44px" /></div>
+        <div class="fav" style="width:48px;height:48px"><img src="assets/favicon.svg" style="width:28px;height:28px" /></div>
+        <div class="fav" style="width:32px;height:32px"><img src="assets/favicon.svg" style="width:18px;height:18px" /></div>
+      </div>
+      <div style="font-family:var(--font-mono); font-size:12px; color:var(--exp-teal-700); margin-top:16px">Favicon · 16 / 32 / 48 px</div>
+    </div>
+  </div>
+
+  <div class="section-head">Misuse</div>
+  <div class="misuse">
+    <div class="mis-tile">
+      <div class="mis-stage ok"><img src="assets/explorium-logo.svg" /></div>
+      <div class="mis-cap">Use at full opacity on brand surfaces</div>
+    </div>
+    <div class="mis-tile">
+      <div class="mis-stage"><img src="assets/explorium-logo.svg" style="transform:rotate(-8deg)" /></div>
+      <div class="mis-cap">Don’t rotate or skew</div>
+    </div>
+    <div class="mis-tile">
+      <div class="mis-stage"><img src="assets/explorium-logo.svg" style="filter:drop-shadow(0 4px 8px rgba(0,0,0,.4))" /></div>
+      <div class="mis-cap">Don’t add shadows or FX</div>
+    </div>
+    <div class="mis-tile">
+      <div class="mis-stage" style="background: linear-gradient(135deg,#ff00cc,#333399)"><img src="assets/explorium-logo.svg" style="filter: brightness(0) invert(1)"/></div>
+      <div class="mis-cap">Don’t place on clashing backgrounds</div>
+    </div>
+  </div>
+
+  <div class="section-head">Voice</div>
+  <div class="voice">
+    <div class="card">
+      <h3>We are</h3>
+      <ul>
+        <li>Confident and specific — we lead with outcomes, not adjectives.</li>
+        <li>Technical when it helps, plain when it doesn’t.</li>
+        <li>Signal over noise — every sentence earns its place.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>We aren’t</h3>
+      <ul>
+        <li>Buzzword-heavy. No “synergy”, no “disrupt”, no “game-changer”.</li>
+        <li>Hype-driven — claims are backed by numbers, sources or customers.</li>
+        <li>Bloated — cut a word if the sentence still works.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</body>
+</html>

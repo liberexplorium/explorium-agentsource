@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Explorium — Spacing</title>
+<link rel="stylesheet" href="colors_and_type.css" />
+<style>
+  body { margin: 0; padding: 56px 64px 72px; background: var(--exp-cream); }
+  .wrap { max-width: 1200px; margin: 0 auto; }
+  header.hdr { display: flex; align-items: baseline; justify-content: space-between; padding-bottom: 20px; border-bottom: 1px solid var(--exp-teal-300); }
+  header.hdr h1 { font-family: var(--font-sans); font-weight: 500; font-size: 28px; color: var(--exp-deep-teal); margin: 0; letter-spacing: -0.01em; }
+  header.hdr .meta { font-family: var(--font-sans); font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--exp-teal-500); }
+
+  .section-head { font-family: var(--font-sans); font-weight: 600; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--exp-teal-500); margin: 44px 0 18px; }
+
+  /* spacing scale */
+  .spc-row { display: grid; grid-template-columns: 100px 140px 1fr; align-items: center; gap: 20px; padding: 10px 0; border-bottom: 1px solid rgba(0,67,73,.08); }
+  .spc-row .tok  { font-family: var(--font-mono); font-size: 12px; color: var(--exp-teal-700); }
+  .spc-row .val  { font-family: var(--font-mono); font-size: 12px; color: var(--exp-deep-teal); }
+  .spc-row .bar  { height: 18px; background: var(--exp-lime); border-radius: 4px; }
+
+  /* radius */
+  .rad-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; }
+  .rad { background: var(--exp-white); border: 1px solid var(--exp-teal-300); padding: 18px; }
+  .rad .box { height: 72px; background: var(--exp-deep-teal); }
+  .rad .lbl { display: flex; justify-content: space-between; margin-top: 12px; font-family: var(--font-mono); font-size: 12px; color: var(--exp-teal-700); }
+  .rad .lbl strong { color: var(--exp-deep-teal); font-weight: 600; }
+
+  /* shadow */
+  .sh-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .sh { background: var(--exp-cream); padding: 32px; display: flex; align-items: center; justify-content: center; }
+  .sh .card { width: 100%; height: 110px; background: var(--exp-white); border-radius: 12px; display:flex; align-items:center; justify-content:center; color: var(--exp-teal-700); font-family: var(--font-mono); font-size: 12px; }
+  .sh-flat .card   { box-shadow: none; border: 1px solid var(--exp-teal-300); }
+  .sh-card .card   { box-shadow: var(--sh-card); }
+  .sh-lift .card   { box-shadow: var(--sh-lift); }
+
+  .grid-dems { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hdr">
+    <h1>Spacing, radius &amp; elevation</h1>
+    <div class="meta">4-pt base · pill-first radii</div>
+  </header>
+
+  <div class="grid-dems">
+    <div>
+      <div class="section-head">Spacing scale</div>
+      <div class="spc-row"><div class="tok">--s-1</div><div class="val">4&nbsp;px</div><div class="bar" style="width:4px"></div></div>
+      <div class="spc-row"><div class="tok">--s-2</div><div class="val">8&nbsp;px</div><div class="bar" style="width:8px"></div></div>
+      <div class="spc-row"><div class="tok">--s-3</div><div class="val">12&nbsp;px</div><div class="bar" style="width:12px"></div></div>
+      <div class="spc-row"><div class="tok">--s-4</div><div class="val">16&nbsp;px</div><div class="bar" style="width:16px"></div></div>
+      <div class="spc-row"><div class="tok">--s-5</div><div class="val">24&nbsp;px</div><div class="bar" style="width:24px"></div></div>
+      <div class="spc-row"><div class="tok">--s-6</div><div class="val">32&nbsp;px</div><div class="bar" style="width:32px"></div></div>
+      <div class="spc-row"><div class="tok">--s-7</div><div class="val">48&nbsp;px</div><div class="bar" style="width:48px"></div></div>
+      <div class="spc-row"><div class="tok">--s-8</div><div class="val">64&nbsp;px</div><div class="bar" style="width:64px"></div></div>
+      <div class="spc-row"><div class="tok">--s-9</div><div class="val">96&nbsp;px</div><div class="bar" style="width:96px"></div></div>
+    </div>
+    <div>
+      <div class="section-head">Layout</div>
+      <div style="font-family:var(--font-mono);font-size:13px;color:var(--exp-teal-700);line-height:2">
+        Page max-width &nbsp;·&nbsp; <strong style="color:var(--exp-deep-teal)">1280 px</strong><br/>
+        Gutter · &nbsp;<strong style="color:var(--exp-deep-teal)">32 px</strong><br/>
+        Section padding-y · &nbsp;<strong style="color:var(--exp-deep-teal)">96 px</strong><br/>
+        Card padding · &nbsp;<strong style="color:var(--exp-deep-teal)">32 px</strong><br/>
+        Stack inside cards · &nbsp;<strong style="color:var(--exp-deep-teal)">16 / 24 px</strong>
+      </div>
+      <div class="section-head" style="margin-top:32px">Breakpoints</div>
+      <div style="font-family:var(--font-mono);font-size:13px;color:var(--exp-teal-700);line-height:2">
+        sm · <strong style="color:var(--exp-deep-teal)">640 px</strong>&nbsp;&nbsp;&nbsp;md · <strong style="color:var(--exp-deep-teal)">768 px</strong><br/>
+        lg · <strong style="color:var(--exp-deep-teal)">1024 px</strong>&nbsp;&nbsp;xl · <strong style="color:var(--exp-deep-teal)">1440 px</strong><br/>
+        2xl · <strong style="color:var(--exp-deep-teal)">1920 px</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-head">Radii</div>
+  <div class="rad-grid">
+    <div class="rad"><div class="box" style="border-radius:4px"></div><div class="lbl"><span>xs</span><strong>4</strong></div></div>
+    <div class="rad"><div class="box" style="border-radius:8px"></div><div class="lbl"><span>sm</span><strong>8</strong></div></div>
+    <div class="rad"><div class="box" style="border-radius:16px"></div><div class="lbl"><span>md</span><strong>16</strong></div></div>
+    <div class="rad"><div class="box" style="border-radius:24px"></div><div class="lbl"><span>lg</span><strong>24</strong></div></div>
+    <div class="rad"><div class="box" style="border-radius:60px"></div><div class="lbl"><span>pill</span><strong>60</strong></div></div>
+  </div>
+
+  <div class="section-head">Elevation</div>
+  <div class="sh-grid">
+    <div class="sh sh-flat"><div class="card">flat — hairline</div></div>
+    <div class="sh sh-card"><div class="card">card — default</div></div>
+    <div class="sh sh-lift"><div class="card">lift — hover / modal</div></div>
+  </div>
+</div>
+</body>
+</html>

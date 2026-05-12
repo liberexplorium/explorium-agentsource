@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Explorium — Colors</title>
+<link rel="stylesheet" href="colors_and_type.css" />
+<style>
+  body { margin: 0; padding: 56px 64px 72px; background: var(--exp-cream); }
+  .wrap { max-width: 1200px; margin: 0 auto; }
+  header.hdr { display: flex; align-items: baseline; justify-content: space-between; padding-bottom: 20px; border-bottom: 1px solid var(--exp-teal-300); }
+  header.hdr h1 { font-family: var(--font-sans); font-weight: 500; font-size: 28px; color: var(--exp-deep-teal); margin: 0; letter-spacing: -0.01em; }
+  header.hdr .meta { font-family: var(--font-sans); font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--exp-teal-500); }
+
+  .section-head { font-family: var(--font-sans); font-weight: 600; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--exp-teal-500); margin: 44px 0 16px; }
+
+  .grid { display: grid; gap: 20px; }
+  .cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .cols-4 { grid-template-columns: repeat(4, 1fr); }
+  .cols-6 { grid-template-columns: repeat(6, 1fr); }
+
+  .chip { border: 1px solid var(--exp-teal-300); border-radius: 12px; overflow: hidden; background: var(--exp-white); }
+  .chip .swatch { height: 150px; }
+  .chip .meta { padding: 14px 16px 16px; }
+  .chip .role { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--exp-teal-500); font-weight: 600; }
+  .chip .name { font-size: 16px; color: var(--exp-deep-teal); font-weight: 500; margin-top: 4px; }
+  .chip .hex  { font-family: var(--font-mono); font-size: 12px; color: var(--exp-teal-700); margin-top: 2px; }
+
+  .chip.sm .swatch { height: 84px; }
+  .chip.sm .meta { padding: 10px 12px 12px; }
+  .chip.sm .name { font-size: 14px; }
+
+  .kv { display:flex; align-items:center; gap: 10px; }
+  .dot { width:16px; height:16px; border-radius: 50%; border:1px solid rgba(0,0,0,.08); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hdr">
+    <h1>Colors</h1>
+    <div class="meta">Primary · Secondary · Neutrals</div>
+  </header>
+
+  <div class="section-head">Primary — the teals</div>
+  <div class="grid cols-3">
+    <div class="chip">
+      <div class="swatch" style="background:#004349"></div>
+      <div class="meta">
+        <div class="role">Brand / Primary</div>
+        <div class="name">Deep Teal</div>
+        <div class="hex">#004349 · rgb(0,67,73)</div>
+      </div>
+    </div>
+    <div class="chip">
+      <div class="swatch" style="background:#336365"></div>
+      <div class="meta">
+        <div class="role">Secondary</div>
+        <div class="name">Teal 700</div>
+        <div class="hex">#336365 · rgb(51,99,101)</div>
+      </div>
+    </div>
+    <div class="chip">
+      <div class="swatch" style="background:#C4DBE1"></div>
+      <div class="meta">
+        <div class="role">Hairline / Soft</div>
+        <div class="name">Teal 300</div>
+        <div class="hex">#C4DBE1 · rgb(196,219,225)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-head">Accents</div>
+  <div class="grid cols-4">
+    <div class="chip">
+      <div class="swatch" style="background:#D1EE71"></div>
+      <div class="meta">
+        <div class="role">CTA · Primary action</div>
+        <div class="name">Lime</div>
+        <div class="hex">#D1EE71</div>
+      </div>
+    </div>
+    <div class="chip">
+      <div class="swatch" style="background:#FFA364"></div>
+      <div class="meta">
+        <div class="role">Accent · Warmth</div>
+        <div class="name">Coral</div>
+        <div class="hex">#FFA364</div>
+      </div>
+    </div>
+    <div class="chip">
+      <div class="swatch" style="background:#9193FE"></div>
+      <div class="meta">
+        <div class="role">Accent · Tag</div>
+        <div class="name">Indigo</div>
+        <div class="hex">#9193FE</div>
+      </div>
+    </div>
+    <div class="chip">
+      <div class="swatch" style="background:#E5FFE4"></div>
+      <div class="meta">
+        <div class="role">Soft highlight</div>
+        <div class="name">Mint</div>
+        <div class="hex">#E5FFE4</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-head">Supporting accents</div>
+  <div class="grid cols-4">
+    <div class="chip sm"><div class="swatch" style="background:#FE9193"></div>
+      <div class="meta"><div class="name">Blush</div><div class="hex">#FE9193</div></div></div>
+    <div class="chip sm"><div class="swatch" style="background:#F8AA60"></div>
+      <div class="meta"><div class="name">Peach</div><div class="hex">#F8AA60</div></div></div>
+    <div class="chip sm"><div class="swatch" style="background:#81D6BA"></div>
+      <div class="meta"><div class="name">Seafoam</div><div class="hex">#81D6BA</div></div></div>
+    <div class="chip sm"><div class="swatch" style="background:#54B092"></div>
+      <div class="meta"><div class="name">Green</div><div class="hex">#54B092</div></div></div>
+  </div>
+
+  <div class="section-head">Surfaces</div>
+  <div class="grid cols-3">
+    <div class="chip">
+      <div class="swatch" style="background:#FFFCF5"></div>
+      <div class="meta"><div class="role">Page background</div><div class="name">Cream</div><div class="hex">#FFFCF5</div></div></div>
+    <div class="chip">
+      <div class="swatch" style="background:#F8F6F2"></div>
+      <div class="meta"><div class="role">Subtle surface</div><div class="name">Paper</div><div class="hex">#F8F6F2</div></div></div>
+    <div class="chip">
+      <div class="swatch" style="background:#FFFFFF"></div>
+      <div class="meta"><div class="role">Card / elevated</div><div class="name">White</div><div class="hex">#FFFFFF</div></div></div>
+  </div>
+
+  <div class="section-head">Neutrals</div>
+  <div class="grid cols-6">
+    <div class="chip sm"><div class="swatch" style="background:#F5F5F5"></div>
+      <div class="meta"><div class="name">N 100</div><div class="hex">#F5F5F5</div></div></div>
+    <div class="chip sm"><div class="swatch" style="background:#E5E5E5"></div>
+      <div class="meta"><div class="name">N 200</div><div class="hex">#E5E5E5</div></div></div>
+    <div class="chip sm"><div class="swatch" style="background:#CCCCCC"></div>
+      <div class="meta"><div class="name">N 300</div><div class="hex">#CCCCCC</div></div></div>
+    <div class="chip sm"><div class="swatch" style="background:#BABABA"></div>
+      <div class="meta"><div class="name">N 400</div><div class="hex">#BABABA</div></div></div>
+    <div class="chip sm"><div class="swatch" style="background:#8F8F8F"></div>
+      <div class="meta"><div class="name">N 500</div><div class="hex">#8F8F8F</div></div></div>
+    <div class="chip sm"><div class="swatch" style="background:#737373"></div>
+      <div class="meta"><div class="name">N 600</div><div class="hex">#737373</div></div></div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+node_modules
+dist
+.DS_Store
+*.log
+.vite
+
+# Design system reference zip (the unzipped folder is committed instead)
+Explorium Design System-v0.1 (1).zip
+
+# Editor / OS
+.idea
+.vscode
+.cache
+
+# Plans / scratch (local-only)
+.claude

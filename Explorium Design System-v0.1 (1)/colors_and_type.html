@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Explorium — Colors & Type Tokens</title>
+<link rel="stylesheet" href="colors_and_type.css" />
+<style>
+  :root { --pad-x: 72px; }
+  body { margin: 0; padding: 64px var(--pad-x) 96px; background: var(--exp-cream); color: var(--exp-deep-teal); }
+  .wrap { max-width: 1200px; margin: 0 auto; }
+
+  /* Header */
+  .doc-hdr { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: end; padding-bottom: 24px; border-bottom: 1px solid var(--exp-teal-300); }
+  .doc-hdr .eyebrow { font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--exp-teal-500); font-weight: 600; margin-bottom: 10px; }
+  .doc-hdr h1 { font-family: var(--font-sans); font-weight: 400; font-size: 56px; line-height: 1.05; letter-spacing: -0.02em; margin: 0; color: var(--exp-deep-teal); }
+  .doc-hdr h1 em { font-style: normal; color: var(--exp-teal-500); }
+  .doc-hdr .meta { font-family: var(--font-mono); font-size: 12px; color: var(--exp-teal-700); text-align: right; line-height: 1.7; }
+
+  /* Section scaffold */
+  section { margin-top: 72px; }
+  .sec-hdr { display: grid; grid-template-columns: 180px 1fr; gap: 32px; margin-bottom: 28px; align-items: baseline; }
+  .sec-hdr .num { font-family: var(--font-mono); font-size: 12px; color: var(--exp-teal-500); letter-spacing: .12em; }
+  .sec-hdr .title { font-weight: 500; font-size: 28px; color: var(--exp-deep-teal); letter-spacing: -0.01em; margin: 0; }
+  .sec-hdr .sub { font-size: 15px; color: var(--exp-teal-700); margin-top: 6px; max-width: 640px; }
+
+  /* Swatches */
+  .grid { display: grid; gap: 16px; }
+  .cols-2 { grid-template-columns: repeat(2, 1fr); }
+  .cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .cols-4 { grid-template-columns: repeat(4, 1fr); }
+  .cols-6 { grid-template-columns: repeat(6, 1fr); }
+
+  .chip {
+    border-radius: 14px; overflow: hidden;
+    background: var(--exp-white);
+    border: 1px solid var(--exp-teal-300);
+    display: flex; flex-direction: column;
+  }
+  .chip .swatch { aspect-ratio: 16/10; position: relative; }
+  .chip.tall .swatch { aspect-ratio: 4/5; }
+  .chip.sm   .swatch { aspect-ratio: 3/2; }
+  .chip .swatch .badge {
+    position: absolute; top: 12px; left: 12px;
+    font-family: var(--font-mono); font-size: 11px;
+    padding: 4px 8px; border-radius: 999px;
+    background: rgba(255,252,245,.85); color: var(--exp-deep-teal);
+    backdrop-filter: blur(4px);
+  }
+  .chip .swatch.light .badge { background: rgba(0,67,73,.08); color: var(--exp-deep-teal); }
+  .chip .meta { padding: 14px 16px 16px; }
+  .chip .role { font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--exp-teal-500); font-weight: 600; }
+  .chip .name { font-size: 16px; color: var(--exp-deep-teal); font-weight: 500; margin-top: 4px; letter-spacing: -0.005em; }
+  .chip .hex  { font-family: var(--font-mono); font-size: 11.5px; color: var(--exp-teal-700); margin-top: 4px; }
+  .chip .var  { font-family: var(--font-mono); font-size: 11px; color: var(--exp-teal-500); margin-top: 2px; }
+  .chip.sm .meta { padding: 10px 12px 12px; }
+  .chip.sm .name { font-size: 14px; }
+
+  /* Hero color ratio strip */
+  .ratio-strip { display: grid; grid-template-columns: 6fr 3fr 2fr 1fr 1fr 1fr; height: 72px; border-radius: 14px; overflow: hidden; border: 1px solid var(--exp-teal-300); margin-top: 8px; }
+  .ratio-strip div { display: flex; align-items: center; justify-content: flex-start; padding: 0 14px; font-family: var(--font-mono); font-size: 11px; }
+
+  /* Type specimens */
+  .type-row { display: grid; grid-template-columns: 200px 1fr 220px; gap: 32px; padding: 20px 0; border-top: 1px solid var(--exp-teal-300); align-items: baseline; }
+  .type-row:first-child { border-top: none; padding-top: 4px; }
+  .type-row .label { font-family: var(--font-mono); font-size: 11px; color: var(--exp-teal-500); letter-spacing: .1em; text-transform: uppercase; padding-top: 8px; }
+  .type-row .label .name { display: block; color: var(--exp-deep-teal); font-family: var(--font-sans); font-weight: 600; font-size: 13px; letter-spacing: .04em; text-transform: none; margin-bottom: 2px; }
+  .type-row .specimen { color: var(--exp-deep-teal); }
+  .type-row .specs { font-family: var(--font-mono); font-size: 11px; color: var(--exp-teal-700); line-height: 1.7; text-align: right; }
+  .type-row .specs .k { color: var(--exp-teal-500); }
+
+  /* Weight row */
+  .weights { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-top: 8px; }
+  .w-card { border: 1px solid var(--exp-teal-300); border-radius: 12px; padding: 18px 16px 16px; background: var(--exp-white); }
+  .w-card .letter { font-family: var(--font-sans); font-size: 56px; line-height: 1; color: var(--exp-deep-teal); letter-spacing: -0.04em; }
+  .w-card .n { font-family: var(--font-mono); font-size: 11px; color: var(--exp-teal-500); margin-top: 12px; letter-spacing: .08em; }
+  .w-card .l { font-size: 13px; color: var(--exp-deep-teal); font-weight: 500; margin-top: 2px; }
+
+  /* Tokens in context */
+  .pairings { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px; }
+  .pair { border-radius: 14px; padding: 28px 28px 30px; border: 1px solid var(--exp-teal-300); }
+  .pair .eyebrow { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; font-weight: 600; margin-bottom: 8px; }
+  .pair h3 { margin: 0 0 10px; font-weight: 400; font-size: 30px; line-height: 1.1; letter-spacing: -0.02em; }
+  .pair p { margin: 0 0 20px; font-size: 15px; line-height: 1.55; }
+  .pair .btn { display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 20px; border-radius: 999px; font-weight: 700; font-size: 14px; letter-spacing: .05em; text-decoration: none; }
+  .pair.a { background: var(--exp-cream); }
+  .pair.a .eyebrow, .pair.a h3, .pair.a p { color: var(--exp-deep-teal); }
+  .pair.a .eyebrow { color: var(--exp-teal-500); }
+  .pair.a p { color: var(--exp-teal-700); }
+  .pair.a .btn { background: var(--exp-lime); color: var(--exp-midnight); }
+  .pair.b { background: var(--exp-deep-teal); border-color: var(--exp-deep-teal); }
+  .pair.b .eyebrow { color: var(--exp-lime); }
+  .pair.b h3, .pair.b p { color: var(--exp-cream); }
+  .pair.b p { opacity: .8; }
+  .pair.b .btn { background: var(--exp-lime); color: var(--exp-midnight); }
+
+  .footnote { margin-top: 72px; font-family: var(--font-mono); font-size: 11px; color: var(--exp-teal-500); display: flex; justify-content: space-between; border-top: 1px solid var(--exp-teal-300); padding-top: 18px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="doc-hdr">
+    <div>
+      <div class="eyebrow">Explorium Design System · Tokens</div>
+      <h1>Colors &amp; <em>Type</em></h1>
+    </div>
+    <div class="meta">
+      colors_and_type.css<br/>
+      24 color tokens · 10 type scales<br/>
+      Gilroy · 9 weights
+    </div>
+  </header>
+
+  <!-- ============ COLORS ============ -->
+  <section>
+    <div class="sec-hdr">
+      <div>
+        <div class="num">01 / COLORS</div>
+      </div>
+      <div>
+        <h2 class="title">Palette</h2>
+        <p class="sub">Teal anchors the brand; lime is the action color; cream is the canvas. Every UI surface is composed from these three with accents used sparingly for emphasis.</p>
+      </div>
+    </div>
+
+    <!-- Brand primaries -->
+    <div class="grid cols-3">
+      <div class="chip tall">
+        <div class="swatch" style="background:#004349"><span class="badge">60%</span></div>
+        <div class="meta">
+          <div class="role">Brand · Primary</div>
+          <div class="name">Deep Teal</div>
+          <div class="hex">#004349 · rgb(0,67,73)</div>
+          <div class="var">--exp-deep-teal</div>
+        </div>
+      </div>
+      <div class="chip tall">
+        <div class="swatch" style="background:#D1EE71"><span class="badge light">30%</span></div>
+        <div class="meta">
+          <div class="role">CTA · Primary action</div>
+          <div class="name">Lime</div>
+          <div class="hex">#D1EE71 · rgb(209,238,113)</div>
+          <div class="var">--exp-lime</div>
+        </div>
+      </div>
+      <div class="chip tall">
+        <div class="swatch" style="background:#FFFCF5; border-right:1px solid var(--exp-teal-300)"><span class="badge light">Canvas</span></div>
+        <div class="meta">
+          <div class="role">Surface · Page</div>
+          <div class="name">Cream</div>
+          <div class="hex">#FFFCF5 · rgb(255,252,245)</div>
+          <div class="var">--exp-cream</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ratio -->
+    <div class="sec-hdr" style="margin-top: 56px;">
+      <div><div class="num">01.2</div></div>
+      <div>
+        <h3 class="title" style="font-size:20px">Recommended balance</h3>
+        <p class="sub">Teal dominates. Cream breathes. Lime punches. Accents dot.</p>
+      </div>
+    </div>
+    <div class="ratio-strip">
+      <div style="background:#FFFCF5;color:#004349">Cream · surface</div>
+      <div style="background:#004349;color:#FFFCF5">Deep Teal · ink</div>
+      <div style="background:#D1EE71;color:#0A2540">Lime · action</div>
+      <div style="background:#FFA364"></div>
+      <div style="background:#9193FE"></div>
+      <div style="background:#C4DBE1"></div>
+    </div>
+
+    <!-- Teal family -->
+    <div class="sec-hdr" style="margin-top: 56px;">
+      <div><div class="num">01.3</div></div>
+      <div>
+        <h3 class="title" style="font-size:20px">Teal family</h3>
+        <p class="sub">Used for text, icons, dark sections, hairlines and low-emphasis surfaces.</p>
+      </div>
+    </div>
+    <div class="grid cols-4">
+      <div class="chip">
+        <div class="swatch" style="background:#0A2540"></div>
+        <div class="meta"><div class="role">Button text</div><div class="name">Midnight</div><div class="hex">#0A2540</div><div class="var">--exp-midnight</div></div>
+      </div>
+      <div class="chip">
+        <div class="swatch" style="background:#336365"></div>
+        <div class="meta"><div class="role">Body · Secondary</div><div class="name">Teal 700</div><div class="hex">#336365</div><div class="var">--exp-teal-700</div></div>
+      </div>
+      <div class="chip">
+        <div class="swatch" style="background:#005050"></div>
+        <div class="meta"><div class="role">Interactive accent</div><div class="name">Teal 500</div><div class="hex">#005050</div><div class="var">--exp-teal-500</div></div>
+      </div>
+      <div class="chip">
+        <div class="swatch light" style="background:#C4DBE1"><span class="badge">Hairline</span></div>
+        <div class="meta"><div class="role">Lines · Dividers</div><div class="name">Teal 300</div><div class="hex">#C4DBE1</div><div class="var">--exp-teal-300</div></div>
+      </div>
+    </div>
+
+    <!-- Accents -->
+    <div class="sec-hdr" style="margin-top: 56px;">
+      <div><div class="num">01.4</div></div>
+      <div>
+        <h3 class="title" style="font-size:20px">Signature accents</h3>
+        <p class="sub">Use one at a time. Reserve for tags, illustration highlights, and single-moment emphasis — never as a primary surface.</p>
+      </div>
+    </div>
+    <div class="grid cols-4">
+      <div class="chip"><div class="swatch" style="background:#FFA364"></div>
+        <div class="meta"><div class="role">Warm accent</div><div class="name">Coral</div><div class="hex">#FFA364</div><div class="var">--exp-coral</div></div></div>
+      <div class="chip"><div class="swatch" style="background:#9193FE"></div>
+        <div class="meta"><div class="role">Cool accent · Tag</div><div class="name">Indigo</div><div class="hex">#9193FE</div><div class="var">--exp-indigo</div></div></div>
+      <div class="chip"><div class="swatch light" style="background:#E5FFE4"><span class="badge">Soft</span></div>
+        <div class="meta"><div class="role">Highlight</div><div class="name">Mint</div><div class="hex">#E5FFE4</div><div class="var">--exp-mint</div></div></div>
+      <div class="chip"><div class="swatch" style="background:#FE9193"></div>
+        <div class="meta"><div class="role">Blush tag</div><div class="name">Blush</div><div class="hex">#FE9193</div><div class="var">--exp-blush</div></div></div>
+    </div>
+
+    <div class="grid cols-4" style="margin-top:16px;">
+      <div class="chip sm"><div class="swatch" style="background:#F8AA60"></div>
+        <div class="meta"><div class="name">Peach</div><div class="hex">#F8AA60</div></div></div>
+      <div class="chip sm"><div class="swatch" style="background:#81D6BA"></div>
+        <div class="meta"><div class="name">Seafoam</div><div class="hex">#81D6BA</div></div></div>
+      <div class="chip sm"><div class="swatch" style="background:#54B092"></div>
+        <div class="meta"><div class="name">Green</div><div class="hex">#54B092</div></div></div>
+      <div class="chip sm"><div class="swatch" style="background:#4DCCA8"></div>
+        <div class="meta"><div class="name">Green Strong</div><div class="hex">#4DCCA8</div></div></div>
+    </div>
+
+    <!-- Neutrals -->
+    <div class="sec-hdr" style="margin-top: 56px;">
+      <div><div class="num">01.5</div></div>
+      <div>
+        <h3 class="title" style="font-size:20px">Neutrals</h3>
+        <p class="sub">Grayscale reserved for disabled states, placeholders, and neutral utility surfaces.</p>
+      </div>
+    </div>
+    <div class="grid cols-6">
+      <div class="chip sm"><div class="swatch light" style="background:#F5F5F5"></div>
+        <div class="meta"><div class="name">N 100</div><div class="hex">#F5F5F5</div></div></div>
+      <div class="chip sm"><div class="swatch light" style="background:#E5E5E5"></div>
+        <div class="meta"><div class="name">N 200</div><div class="hex">#E5E5E5</div></div></div>
+      <div class="chip sm"><div class="swatch" style="background:#CCCCCC"></div>
+        <div class="meta"><div class="name">N 300</div><div class="hex">#CCCCCC</div></div></div>
+      <div class="chip sm"><div class="swatch" style="background:#BABABA"></div>
+        <div class="meta"><div class="name">N 400</div><div class="hex">#BABABA</div></div></div>
+      <div class="chip sm"><div class="swatch" style="background:#8F8F8F"></div>
+        <div class="meta"><div class="name">N 500</div><div class="hex">#8F8F8F</div></div></div>
+      <div class="chip sm"><div class="swatch" style="background:#737373"></div>
+        <div class="meta"><div class="name">N 600</div><div class="hex">#737373</div></div></div>
+    </div>
+  </section>
+
+  <!-- ============ TYPE ============ -->
+  <section>
+    <div class="sec-hdr" style="margin-top: 96px;">
+      <div>
+        <div class="num">02 / TYPE</div>
+      </div>
+      <div>
+        <h2 class="title">Typography</h2>
+        <p class="sub">Gilroy is the single typeface across the brand — a geometric sans with a warm, slightly condensed feel. Use tight tracking on display sizes, comfortable leading on body, and wide tracking on buttons.</p>
+      </div>
+    </div>
+
+    <!-- Weights -->
+    <div class="weights">
+      <div class="w-card"><div class="letter" style="font-weight:300">Aa</div><div class="n">300</div><div class="l">Light</div></div>
+      <div class="w-card"><div class="letter" style="font-weight:400">Aa</div><div class="n">400</div><div class="l">Regular</div></div>
+      <div class="w-card"><div class="letter" style="font-weight:500">Aa</div><div class="n">500</div><div class="l">Medium</div></div>
+      <div class="w-card"><div class="letter" style="font-weight:600">Aa</div><div class="n">600</div><div class="l">Semibold</div></div>
+      <div class="w-card"><div class="letter" style="font-weight:700">Aa</div><div class="n">700</div><div class="l">Bold</div></div>
+    </div>
+
+    <!-- Scale -->
+    <div style="margin-top: 48px;">
+      <div class="type-row">
+        <div class="label"><span class="name">Display</span>.ex-display</div>
+        <div class="specimen" style="font-size:68px;font-weight:400;line-height:1.1;letter-spacing:-0.02em;">B2B data built for AI</div>
+        <div class="specs"><span class="k">size</span> 68 / 75<br/><span class="k">weight</span> Regular<br/><span class="k">track</span> −2%</div>
+      </div>
+      <div class="type-row">
+        <div class="label"><span class="name">Heading 1</span>.ex-h1</div>
+        <div class="specimen" style="font-size:54px;font-weight:400;line-height:1.1;letter-spacing:-0.02em;">The predictive prospecting advantage</div>
+        <div class="specs"><span class="k">size</span> 54 / 60<br/><span class="k">weight</span> Regular<br/><span class="k">track</span> −2%</div>
+      </div>
+      <div class="type-row">
+        <div class="label"><span class="name">Heading 2</span>.ex-h2</div>
+        <div class="specimen" style="font-size:42px;font-weight:400;line-height:48px;">What our customers say</div>
+        <div class="specs"><span class="k">size</span> 42 / 48<br/><span class="k">weight</span> Regular</div>
+      </div>
+      <div class="type-row">
+        <div class="label"><span class="name">Heading 3</span>.ex-h3</div>
+        <div class="specimen" style="font-size:32px;font-weight:500;line-height:1.25;">High-quality sources, curated</div>
+        <div class="specs"><span class="k">size</span> 32 / 40<br/><span class="k">weight</span> Medium</div>
+      </div>
+      <div class="type-row">
+        <div class="label"><span class="name">Heading 4</span>.ex-h4</div>
+        <div class="specimen" style="font-size:24px;font-weight:500;line-height:1.3;">Dynamic connectivity</div>
+        <div class="specs"><span class="k">size</span> 24 / 31<br/><span class="k">weight</span> Medium</div>
+      </div>
+      <div class="type-row">
+        <div class="label"><span class="name">Title</span>.ex-title</div>
+        <div class="specimen" style="font-size:20px;font-weight:500;line-height:1.25;">Proprietary enrichment pipeline</div>
+        <div class="specs"><span class="k">size</span> 20 / 25<br/><span class="k">weight</span> Medium</div>
+      </div>
+      <div class="type-row">
+        <div class="label"><span class="name">Body Large</span>.ex-body-lg</div>
+        <div class="specimen" style="font-size:18px;font-weight:400;line-height:28px;color:#336365;">Explorium curates a large number of trusted data sources, ranging from public databases to premium third-party providers.</div>
+        <div class="specs"><span class="k">size</span> 18 / 28<br/><span class="k">weight</span> Regular<br/><span class="k">color</span> Teal 700</div>
+      </div>
+      <div class="type-row">
+        <div class="label"><span class="name">Body</span>.ex-body</div>
+        <div class="specimen" style="font-size:16px;font-weight:400;line-height:24px;color:#336365;">Explorium connects thousands of data sources in real-time, delivering fresh enrichment for every account and contact.</div>
+        <div class="specs"><span class="k">size</span> 16 / 24<br/><span class="k">weight</span> Regular<br/><span class="k">color</span> Teal 700</div>
+      </div>
+      <div class="type-row">
+        <div class="label"><span class="name">Caption</span>.ex-caption</div>
+        <div class="specimen" style="font-size:14px;font-weight:400;line-height:20px;color:#336365;">Supporting metadata, small labels, helper text.</div>
+        <div class="specs"><span class="k">size</span> 14 / 20<br/><span class="k">weight</span> Regular</div>
+      </div>
+      <div class="type-row">
+        <div class="label"><span class="name">Eyebrow</span>.ex-eyebrow</div>
+        <div class="specimen" style="font-size:18px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#005050;">Predictive prospecting</div>
+        <div class="specs"><span class="k">size</span> 18<br/><span class="k">weight</span> Semibold<br/><span class="k">track</span> +12%</div>
+      </div>
+      <div class="type-row">
+        <div class="label"><span class="name">CTA Label</span>.ex-cta-label</div>
+        <div class="specimen" style="font-size:18px;font-weight:700;letter-spacing:.05em;">Get a Demo</div>
+        <div class="specs"><span class="k">size</span> 18<br/><span class="k">weight</span> Bold<br/><span class="k">track</span> +5%</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ IN CONTEXT ============ -->
+  <section>
+    <div class="sec-hdr" style="margin-top: 96px;">
+      <div>
+        <div class="num">03 / IN CONTEXT</div>
+      </div>
+      <div>
+        <h2 class="title">Tokens in use</h2>
+        <p class="sub">How color &amp; type compose into a real surface — on cream and on deep teal.</p>
+      </div>
+    </div>
+
+    <div class="pairings">
+      <div class="pair a">
+        <div class="eyebrow">Our Data</div>
+        <h3>High-quality sources, curated for revenue teams.</h3>
+        <p>Ten thousand signals refreshed daily — firmographics, technographics, intent and more — ready for enrichment and prospecting.</p>
+        <a class="btn" href="#">Get a Demo →</a>
+      </div>
+      <div class="pair b">
+        <div class="eyebrow">Platform</div>
+        <h3>GTM agents delivering human-level results with Explorium.</h3>
+        <p>Real-time enrichment, proprietary signals, and agent-ready infra — so every outreach is grounded in fresh, trusted data.</p>
+        <a class="btn" href="#">Start free →</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="footnote">
+    <span>colors_and_type.css · Explorium Design System 2025</span>
+    <span>Gilroy · 24 colors · 11 type roles</span>
+  </div>
+
+</div>
+</body>
+</html>

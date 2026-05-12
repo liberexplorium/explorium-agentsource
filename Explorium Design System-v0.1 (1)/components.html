@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Explorium — Components</title>
+<link rel="stylesheet" href="colors_and_type.css" />
+<style>
+  body { margin: 0; padding: 56px 64px 72px; background: var(--exp-cream); }
+  .wrap { max-width: 1200px; margin: 0 auto; }
+  header.hdr { display: flex; align-items: baseline; justify-content: space-between; padding-bottom: 20px; border-bottom: 1px solid var(--exp-teal-300); }
+  header.hdr h1 { font-family: var(--font-sans); font-weight: 500; font-size: 28px; color: var(--exp-deep-teal); margin: 0; letter-spacing: -0.01em; }
+  header.hdr .meta { font-family: var(--font-sans); font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--exp-teal-500); }
+  .section-head { font-family: var(--font-sans); font-weight: 600; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--exp-teal-500); margin: 40px 0 16px; }
+
+  .block { background: var(--exp-white); border: 1px solid var(--exp-teal-300); border-radius: 16px; padding: 28px; }
+  .row { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+
+  /* Nav */
+  .nav {
+    display: flex; align-items: center; gap: 40px;
+    background: var(--exp-white); border: 1px solid var(--exp-teal-300);
+    border-radius: 60px; padding: 10px 12px 10px 28px;
+  }
+  .nav .logo { font-family: var(--font-sans); font-weight: 700; font-size: 22px; color: var(--exp-deep-teal); letter-spacing: -.01em; }
+  .nav .links { display:flex; gap: 36px; margin-left: 8px; flex: 1; }
+  .nav .links a { color: var(--exp-deep-teal); font-weight: 500; font-size: 15px; text-decoration: none; }
+  .nav .links a:hover { color: var(--exp-teal-500); }
+
+  /* Input */
+  .input {
+    display:flex; align-items:center; gap:10px;
+    height: 48px; padding: 0 18px;
+    background: var(--exp-white); border: 1px solid var(--exp-teal-300);
+    border-radius: 60px; width: 320px;
+  }
+  .input input { all:unset; flex:1; font-family: var(--font-sans); font-size: 15px; color: var(--exp-deep-teal); }
+  .input input::placeholder { color: var(--exp-n-500); }
+
+  /* Card */
+  .card-demo {
+    width: 340px; background: var(--exp-white); border-radius: 20px; padding: 28px;
+    border: 1px solid var(--exp-teal-300);
+  }
+  .card-demo .icon {
+    width: 44px; height: 44px; border-radius: 12px; background: var(--exp-mint);
+    display:flex; align-items:center; justify-content:center; margin-bottom: 20px;
+  }
+  .card-demo .icon svg { width: 22px; height: 22px; color: var(--exp-deep-teal); }
+  .card-demo h4 { margin: 0 0 8px; font-family: var(--font-sans); font-weight: 500; font-size: 22px; color: var(--exp-deep-teal); letter-spacing: -.01em; }
+  .card-demo p { margin: 0; color: var(--exp-teal-700); font-size: 15px; line-height: 22px; }
+
+  /* Stat card */
+  .stat {
+    background: var(--exp-deep-teal); color: var(--exp-cream);
+    border-radius: 20px; padding: 28px; width: 280px;
+  }
+  .stat .num { font-size: 56px; font-weight: 400; letter-spacing: -.02em; line-height: 1; }
+  .stat .lbl { margin-top: 12px; font-size: 15px; color: #C4DBE1; }
+
+  /* Badges */
+  .badge {
+    display:inline-flex; align-items:center; gap:6px;
+    padding: 5px 12px; border-radius: 60px; font-size: 13px; font-weight: 600;
+    font-family: var(--font-sans);
+  }
+  .badge-lime   { background: var(--exp-lime);   color: var(--exp-midnight); }
+  .badge-mint   { background: var(--exp-mint);   color: var(--exp-deep-teal); }
+  .badge-coral  { background: #FFE0CC;           color: #8A3C0E; }
+  .badge-indigo { background: #E5E5FE;           color: #3D3FB8; }
+  .badge-blush  { background: #FFE0E1;           color: #A8393B; }
+  .badge-teal   { background: var(--exp-teal-300); color: var(--exp-deep-teal); }
+
+  /* dot indicator */
+  .dots { display:flex; gap: 14px; align-items:center; }
+  .dot { width:10px; height:10px; border-radius:50%; background: var(--exp-teal-300); }
+  .dot.on { background: var(--exp-deep-teal); }
+
+  .grid-cards { display:grid; grid-template-columns: repeat(3, 1fr); gap:20px; }
+  .grid-2 { display:grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hdr">
+    <h1>Components</h1>
+    <div class="meta">Buttons · nav · inputs · cards</div>
+  </header>
+
+  <div class="section-head">Buttons</div>
+  <div class="block">
+    <div class="row">
+      <button class="ex-btn ex-btn--primary">Get a Demo</button>
+      <button class="ex-btn ex-btn--secondary">Sign up</button>
+      <button class="ex-btn ex-btn--ghost">Learn more</button>
+    </div>
+    <div class="row" style="margin-top:18px">
+      <button class="ex-btn ex-btn--primary ex-btn--lg">Talk to sales →</button>
+      <button class="ex-btn ex-btn--secondary ex-btn--lg">Book demo</button>
+      <button class="ex-btn ex-btn--primary ex-btn--sm">Sign up</button>
+      <button class="ex-btn ex-btn--ghost ex-btn--sm">Docs</button>
+    </div>
+  </div>
+
+  <div class="section-head">Navigation &amp; inputs</div>
+  <div class="block">
+    <div class="nav">
+      <span class="logo">explorium</span>
+      <div class="links">
+        <a>Product</a><a>Our Data</a><a>Pricing</a><a>About</a><a>Blog</a>
+      </div>
+      <button class="ex-btn ex-btn--primary ex-btn--sm">Get a Demo</button>
+    </div>
+    <div class="row" style="margin-top:24px">
+      <div class="input">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--exp-teal-500)"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input placeholder="Search companies, domains, contacts…" />
+      </div>
+      <div class="input" style="width:260px"><input placeholder="work@company.com" /></div>
+      <button class="ex-btn ex-btn--primary">Subscribe</button>
+    </div>
+  </div>
+
+  <div class="section-head">Badges &amp; indicators</div>
+  <div class="block">
+    <div class="row">
+      <span class="badge badge-lime">New</span>
+      <span class="badge badge-mint">Enriched</span>
+      <span class="badge badge-teal">Verified</span>
+      <span class="badge badge-coral">Intent ↑</span>
+      <span class="badge badge-indigo">ICP match</span>
+      <span class="badge badge-blush">At risk</span>
+    </div>
+    <div class="row" style="margin-top:22px">
+      <div class="dots"><span class="dot on"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+      <div class="dots" style="margin-left:40px">
+        <span class="badge badge-mint">● Live</span>
+        <span class="badge badge-teal">● Paused</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-head">Cards</div>
+  <div class="grid-cards">
+    <div class="card-demo">
+      <div class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v3"/><path d="M3 16v3a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-3"/><path d="M3 12h18"/></svg>
+      </div>
+      <h4>Dynamic connectivity</h4>
+      <p>Live data pipelines that stay fresh — sync to CRM, warehouse, or workflow in minutes.</p>
+    </div>
+    <div class="card-demo">
+      <div class="icon" style="background:#FFE0CC"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:#8A3C0E"><path d="m4 12 6 6L20 6"/></svg></div>
+      <h4>Proprietary enrichment</h4>
+      <p>Signals built from 200+ sources — firmographics, tech stack, funding and hiring intent.</p>
+    </div>
+    <div class="card-demo">
+      <div class="icon" style="background:#E5E5FE"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:#3D3FB8"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg></div>
+      <h4>Customized signal creation</h4>
+      <p>Compose your own signals with simple logic — no engineering lift required.</p>
+    </div>
+  </div>
+
+  <div class="section-head">Stats</div>
+  <div class="row">
+    <div class="stat"><div class="num">76%</div><div class="lbl">Reduction in invalid contacts</div></div>
+    <div class="stat" style="background:var(--exp-lime); color:var(--exp-midnight)"><div class="num">3.4×</div><div class="lbl" style="color:var(--exp-teal-600)">Pipeline lift within 90 days</div></div>
+    <div class="stat" style="background:var(--exp-teal-300); color:var(--exp-deep-teal)"><div class="num">200+</div><div class="lbl" style="color:var(--exp-teal-700)">Data sources curated</div></div>
+  </div>
+</div>
+</body>
+</html>
