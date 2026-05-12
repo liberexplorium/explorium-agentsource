@@ -222,6 +222,21 @@
 }
 .select:focus { outline: 2px solid var(--exp-teal-500); outline-offset: 1px; }
 
+.customInput {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font: inherit;
+  font-size: 14px;
+  color: var(--text);
+  background: var(--exp-white);
+  width: 160px;
+}
+.customInput:focus { outline: 2px solid var(--exp-teal-500); outline-offset: 1px; }
+.customInput::placeholder { color: var(--exp-n-500); }
+
 /* Threshold — segmented control */
 .thresholdGroup {
   display: flex;

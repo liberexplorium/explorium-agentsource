@@ -40,14 +40,17 @@ export function TopUpPage() {
   const [enabled, setEnabled] = useState(true);
   const [pkg, setPkg] = useState<PackageKey | null>(null);
   const [maxOcc, setMaxOcc] = useState<string>('Unlimited');
+  const [customMax, setCustomMax] = useState<string>('');
   const [threshold, setThreshold] = useState<Threshold>(100);
 
+  const isCustomMax = maxOcc === 'Custom';
   const canSave = pkg !== null;
 
   function clearAll() {
     setPkg(null);
     setThreshold(100);
     setMaxOcc('Unlimited');
+    setCustomMax('');
   }
 
   return (
@@ -138,7 +141,20 @@ export function TopUpPage() {
               <option>3</option>
               <option>5</option>
               <option>10</option>
+              <option>Custom</option>
             </select>
+            {isCustomMax && (
+              <input
+                type="number"
+                min={1}
+                step={1}
+                placeholder="Enter a number"
+                value={customMax}
+                onChange={(e) => setCustomMax(e.target.value)}
+                aria-label="Custom maximum top-up occurrences"
+                className={styles.customInput}
+              />
+            )}
           </div>
         </section>
 
