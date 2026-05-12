@@ -62,7 +62,12 @@ export function Sidebar({ page, onNavigate }: Props) {
       <nav className={styles.nav}>
         <NavItem icon={<DocIcon />} label="Documentation" external />
         <NavItem icon={<PuzzleIcon />} label="Integrations" external />
-        <NavItem icon={<SqrtIcon />} label="Vibe Prospecting" external />
+        <NavItem
+          icon={<SqrtIcon />}
+          label="Vibe Prospecting"
+          external
+          href="https://www.vibeprospecting.ai/?utm_source=agentsource"
+        />
         <NavItem
           icon={<StackIcon />}
           label="Our Data"
