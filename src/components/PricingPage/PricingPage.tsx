@@ -14,8 +14,7 @@ interface Tier {
 const TIERS: Tier[] = [
   { key: 'starter', label: 'STARTER', color: 'teal',   price: '$99',    cents: '.99', credits: '2.5K Credits' },
   { key: 'growth',  label: 'GROWTH',  color: 'indigo', price: '$749',   cents: '.99', credits: '25K Credits' },
-  { key: 'pro',     label: 'PRO',     color: 'coral',  price: '$1,250', credits: '50K Credits' },
-  { key: 'scale',   label: 'SCALE',   color: 'lime',   price: '$7,500', credits: '500K Credits' },
+  { key: 'pro',     label: 'PRO',     color: 'coral',  price: '$7,499', cents: '.99', credits: '500K Credits' },
 ];
 
 const CUSTOM_FEATURES_LEFT  = ['Search preview option', 'Additional QPM', 'Volume discounts'];

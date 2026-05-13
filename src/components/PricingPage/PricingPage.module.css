@@ -46,7 +46,7 @@
 /* ── Tier grid ────────────────────────────── */
 .tiers {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   width: 100%;
   max-width: 1024px;
 }
@@ -341,8 +341,7 @@
   .tiers { grid-template-columns: repeat(2, 1fr); }
   .tierCard + .tierCard { border-left: 1px solid #bdd6dc; }
   .tierCard:nth-child(2) { border-left: 0; }
-  .tierCard:nth-child(3),
-  .tierCard:nth-child(4) { border-top: 0; }
+  .tierCard:nth-child(3) { border-top: 0; }
   .customInner {
     flex-wrap: wrap;
     gap: 24px;
