@@ -7,11 +7,12 @@ interface Tier {
   label: string;
   color: TierColor;
   price: string;
+  cents?: string;
   credits: string;
 }
 
 const TIERS: Tier[] = [
-  { key: 'starter', label: 'STARTER', color: 'teal',   price: '$250',   credits: '6,250 Credits' },
+  { key: 'starter', label: 'STARTER', color: 'teal',   price: '$99',    cents: '.99', credits: '2.5K Credits' },
   { key: 'growth',  label: 'GROWTH',  color: 'indigo', price: '$600',   credits: '25K Credits' },
   { key: 'pro',     label: 'PRO',     color: 'coral',  price: '$1,250', credits: '50K Credits' },
   { key: 'scale',   label: 'SCALE',   color: 'lime',   price: '$7,500', credits: '500K Credits' },
@@ -67,7 +68,14 @@ export function PricingPage() {
               <div className={styles.tierBody}>
                 <div className={styles.priceRow}>
                   <span className={styles.priceAmount}>{tier.price}</span>
-                  <span className={styles.pricePer}>/pkg</span>
+                  {tier.cents ? (
+                    <span className={styles.priceTail}>
+                      <span className={styles.priceCents}>{tier.cents}</span>
+                      <span className={styles.priceUnit}>/pkg</span>
+                    </span>
+                  ) : (
+                    <span className={styles.pricePer}>/pkg</span>
+                  )}
                 </div>
                 <p className={styles.tierCredits}>{tier.credits}</p>
               </div>

@@ -114,6 +114,27 @@
   padding-bottom: 4px;
 }
 
+.priceTail {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  margin-left: 4px;
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.priceCents {
+  color: #0b3a40;
+  font-weight: 600;
+}
+
+.priceUnit {
+  color: #62748e;
+  font-weight: 400;
+}
+
 .tierCredits {
   font-weight: 500;
   font-size: 16px;
