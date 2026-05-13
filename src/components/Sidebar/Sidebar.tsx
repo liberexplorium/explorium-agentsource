@@ -17,7 +17,7 @@ import {
   StackIcon,
 } from './icons';
 
-type SidebarPage = 'overview' | 'billing' | 'topup' | 'account';
+type SidebarPage = 'overview' | 'billing' | 'topup' | 'account' | 'pricing';
 
 type Props = {
   page: SidebarPage;
@@ -54,7 +54,12 @@ export function Sidebar({ page, onNavigate }: Props) {
         <NavItem icon={<KeyIcon />} label="API Keys" />
         <NavItem icon={<PlaygroundIcon />} label="API Playground" />
         <NavItem icon={<GenerateIcon />} label="Generate" />
-        <NavItem icon={<PricingIcon />} label="Pricing" />
+        <NavItem
+          icon={<PricingIcon />}
+          label="Pricing"
+          active={page === 'pricing'}
+          onClick={() => onNavigate('pricing')}
+        />
       </nav>
 
       <div className={styles.divider} />
