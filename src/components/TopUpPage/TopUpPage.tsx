@@ -153,7 +153,7 @@ export function TopUpPage() {
                       onClick={() => setPkg(selected ? null : p.key)}
                     >
                       {selected && <CheckIcon />}
-                      <span>{selected ? 'Selected Package' : 'Select Package'}</span>
+                      <span>{selected ? 'Selected' : 'Select'}</span>
                     </button>
                   </div>
                 </div>
