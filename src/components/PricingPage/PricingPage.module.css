@@ -148,6 +148,10 @@
   justify-content: center;
 }
 
+.tierFooter .purchaseBtn {
+  width: 100%;
+}
+
 /* Lime pill button shared by Purchase / Talk to Us */
 .purchaseBtn {
   appearance: none;
