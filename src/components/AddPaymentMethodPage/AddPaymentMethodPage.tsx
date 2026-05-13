@@ -263,7 +263,14 @@ export function AddPaymentMethodPage() {
         <button
           type="button"
           className={styles.payBtn}
-          onClick={() => window.close()}
+          onClick={() => {
+            try {
+              localStorage.setItem('paymentMethodAdded', 'true');
+            } catch {
+              /* ignore */
+            }
+            window.close();
+          }}
         >
           Save card
         </button>

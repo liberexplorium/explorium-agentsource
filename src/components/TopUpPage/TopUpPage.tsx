@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './TopUpPage.module.css';
 
 type PackageKey = 'starter' | 'growth' | 'scale';
@@ -36,12 +36,50 @@ function ArrowRight() {
   );
 }
 
+function CheckBadge() {
+  return (
+    <svg width={18} height={18} viewBox="0 0 24 24" aria-hidden>
+      <circle cx={12} cy={12} r={10} fill="var(--exp-green-strong)" />
+      <path
+        d="M7.5 12.5l3 3 6-6.5"
+        stroke="#fff"
+        strokeWidth={2.2}
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function readPaymentMethodAdded(): boolean {
+  try {
+    return localStorage.getItem('paymentMethodAdded') === 'true';
+  } catch {
+    return false;
+  }
+}
+
 export function TopUpPage() {
   const [enabled, setEnabled] = useState(true);
   const [pkg, setPkg] = useState<PackageKey | null>(null);
   const [maxOcc, setMaxOcc] = useState<string>('Unlimited');
   const [customMax, setCustomMax] = useState<string>('');
   const [threshold, setThreshold] = useState<Threshold>(100);
+  const [hasPaymentMethod, setHasPaymentMethod] = useState<boolean>(() => readPaymentMethodAdded());
+
+  // Re-read when the tab regains focus (e.g. after the user saves a method in another tab)
+  useEffect(() => {
+    const sync = () => setHasPaymentMethod(readPaymentMethodAdded());
+    window.addEventListener('focus', sync);
+    document.addEventListener('visibilitychange', sync);
+    window.addEventListener('storage', sync);
+    return () => {
+      window.removeEventListener('focus', sync);
+      document.removeEventListener('visibilitychange', sync);
+      window.removeEventListener('storage', sync);
+    };
+  }, []);
 
   const isCustomMax = maxOcc === 'Custom';
   const canSave = pkg !== null;
@@ -185,7 +223,8 @@ export function TopUpPage() {
             rel="noopener noreferrer"
             className={styles.paymentLink}
           >
-            <span>Add payment method</span>
+            {hasPaymentMethod && <CheckBadge />}
+            <span>{hasPaymentMethod ? 'Update payment method' : 'Add payment method'}</span>
             <ArrowRight />
           </a>
         </section>
