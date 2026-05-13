@@ -3,6 +3,7 @@ import { Sidebar } from './components/Sidebar/Sidebar';
 import { BillingPage } from './components/BillingPage/BillingPage';
 import { TopUpPage } from './components/TopUpPage/TopUpPage';
 import { AccountSettingsPage } from './components/AccountSettingsPage/AccountSettingsPage';
+import { AddPaymentMethodPage } from './components/AddPaymentMethodPage/AddPaymentMethodPage';
 
 export type Page = 'overview' | 'billing' | 'topup' | 'account';
 
@@ -23,6 +24,12 @@ const PATH_TO_PAGE: Record<string, Page> = {
 export default function App() {
   const location = useLocation();
   const navigate = useNavigate();
+
+  // Standalone routes — render without the sidebar/main shell
+  if (location.pathname === '/add-payment-method') {
+    return <AddPaymentMethodPage />;
+  }
+
   const page: Page = PATH_TO_PAGE[location.pathname] ?? 'overview';
 
   function setPage(next: Page) {

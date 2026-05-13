@@ -1,0 +1,302 @@
+.page {
+  min-height: 100vh;
+  background: var(--exp-white);
+  font-family: var(--font-sans);
+  color: var(--text);
+}
+
+/* Header strip */
+.headerStrip {
+  background: var(--exp-cream);
+  padding: 16px 0 24px;
+  border-bottom: 1px solid #F0E9DE;
+}
+
+.headerInner {
+  max-width: 480px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 16px;
+}
+
+.backBtn {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: var(--exp-n-500);
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.backBtn:hover { color: var(--text); background: rgba(0,0,0,0.04); }
+
+.brandLogos {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.brandLogoExplorium,
+.brandLogoVibe {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.brandLogoExplorium {
+  background: #004349;
+  padding: 2px;
+}
+.brandLogoExplorium img { display: block; border-radius: 4px; }
+
+.brandLogoVibe {
+  background: #0E191E;
+  color: var(--exp-cream);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Body */
+.body {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 28px 16px 64px;
+}
+
+/* Link button */
+.linkBtn {
+  appearance: none;
+  width: 100%;
+  border: 0;
+  background: #00D66F;
+  color: #062c1a;
+  font: inherit;
+  font-weight: 600;
+  font-size: 16px;
+  height: 44px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+.linkBtn:hover { background: #00c266; }
+
+.linkPlay { color: #062c1a; display: inline-flex; }
+.linkLabel { font-weight: 700; }
+.linkSep {
+  width: 1px;
+  height: 18px;
+  background: rgba(0,0,0,0.2);
+  margin: 0 4px;
+}
+.linkBank { display: inline-flex; align-items: center; }
+.linkAcct { font-weight: 600; }
+
+/* OR divider */
+.orRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0;
+}
+.orLine {
+  flex: 1;
+  height: 1px;
+  background: #E5E7EB;
+}
+.orText {
+  color: var(--exp-n-500);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.sectionTitle {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 24px 0 12px;
+  color: var(--text);
+}
+
+/* Stripe-style input group: bordered card, separators between rows */
+.inputGroup {
+  border: 1px solid #D4D6DA;
+  border-radius: 6px;
+  background: var(--exp-white);
+  overflow: hidden;
+}
+
+.inputRow,
+.inputRow2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  border-top: 1px solid #E5E7EB;
+  min-height: 44px;
+}
+
+.inputRow:first-child,
+.inputRow2:first-child {
+  border-top: 0;
+}
+
+.inputRow2 { padding: 0; }
+.inputRow2 .inputCell {
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  min-height: 44px;
+  border-left: 1px solid #E5E7EB;
+}
+.inputRow2 .inputCell:first-child { border-left: 0; }
+
+.inputIcon {
+  color: var(--exp-n-500);
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+.inputField {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  font-size: 14px;
+  color: var(--text);
+  flex: 1;
+  min-width: 0;
+  padding: 12px 0;
+  outline: none;
+}
+.inputField::placeholder { color: var(--exp-n-500); }
+
+.optionalTag {
+  font-size: 12px;
+  color: var(--exp-n-500);
+  border: 1px solid #D4D6DA;
+  border-radius: 4px;
+  padding: 2px 8px;
+  flex-shrink: 0;
+}
+
+.selectField {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  font-size: 14px;
+  color: var(--text);
+  flex: 1;
+  padding: 12px 0;
+  outline: none;
+}
+
+.selectChevron {
+  color: var(--exp-n-500);
+  display: inline-flex;
+}
+
+/* Brand pills inside card number row */
+.brandRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+.brandPill {
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--exp-white);
+  padding: 3px 6px;
+  border-radius: 3px;
+  letter-spacing: 0.02em;
+}
+.brandVisa   { background: #1A1F71; }
+.brandMc     { background: #EB001B; }
+.brandAmex   { background: #006FCF; }
+.brandDiners { background: #0079BE; }
+
+.cvcHint { color: var(--exp-n-500); flex-shrink: 0; }
+
+/* Card panel */
+.cardPanel {
+  border: 1px solid #D4D6DA;
+  border-radius: 6px;
+  background: var(--exp-white);
+  overflow: hidden;
+}
+
+.cardPanelHead {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.radio {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #0E1116;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.radioDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--exp-white);
+}
+
+.cardPanelHeadLabel {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.cardField {
+  padding: 16px;
+  border-top: 1px solid #E5E7EB;
+}
+.cardField:first-of-type { border-top: 0; }
+
+.cardFieldLabel {
+  font-size: 13px;
+  color: var(--exp-n-600);
+  margin-bottom: 8px;
+}
+
+.payBtn {
+  appearance: none;
+  width: 100%;
+  border: 0;
+  background: #6772E5;
+  color: var(--exp-white);
+  font: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 24px;
+}
+.payBtn:hover { background: #5469D4; }

@@ -179,7 +179,12 @@ export function TopUpPage() {
 
         <section className={styles.section}>
           <p className={styles.sectionLabel}>Payment Method</p>
-          <a href="#" className={styles.paymentLink}>
+          <a
+            href="/add-payment-method"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.paymentLink}
+          >
             <span>Add payment method</span>
             <ArrowRight />
           </a>
