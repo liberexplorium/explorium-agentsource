@@ -125,7 +125,7 @@ export function TopUpPage() {
         aria-disabled={!enabled}
       >
         <section className={styles.section}>
-          <p className={styles.sectionLabel}>Select the package you would like to top-up</p>
+          <p className={styles.sectionLabel}>Choose a package</p>
           <div className={styles.packages}>
             {PACKAGES.map((p) => {
               const selected = pkg === p.key;
