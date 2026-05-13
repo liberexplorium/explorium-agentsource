@@ -165,7 +165,7 @@ export function TopUpPage() {
         <section className={styles.section}>
           <div className={styles.inlineRow}>
             <label htmlFor="maxocc" className={styles.inlineLabel}>
-              Select the maximum top-up occurrences
+              Refill up to
             </label>
             <select
               id="maxocc"
@@ -174,11 +174,11 @@ export function TopUpPage() {
               onChange={(e) => setMaxOcc(e.target.value)}
             >
               <option>Unlimited</option>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>5</option>
-              <option>10</option>
+              <option>1 time</option>
+              <option>2 times</option>
+              <option>3 times</option>
+              <option>5 times</option>
+              <option>10 times</option>
               <option>Custom</option>
             </select>
             {isCustomMax && (
