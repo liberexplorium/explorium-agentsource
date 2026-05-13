@@ -99,6 +99,7 @@ export function Sidebar({ page, onNavigate }: Props) {
 
       <UserChip
         active={page === 'billing' || page === 'topup' || page === 'account'}
+        onSelectPricing={() => onNavigate('pricing')}
         onSelectBilling={() => onNavigate('billing')}
         onSelectTopUp={() => onNavigate('topup')}
         onSelectAccount={() => onNavigate('account')}
