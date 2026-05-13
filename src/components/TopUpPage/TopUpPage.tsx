@@ -197,10 +197,7 @@ export function TopUpPage() {
         </section>
 
         <section className={styles.section}>
-          <p className={styles.sectionLabel}>Threshold</p>
-          <p className={styles.sectionDesc}>
-            Define the remaining credit balance in which the automatic top-up triggers
-          </p>
+          <p className={styles.sectionLabel}>Top up when balance reaches</p>
           <div className={styles.thresholdGroup}>
             {THRESHOLDS.map((t) => (
               <button
