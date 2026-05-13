@@ -93,7 +93,7 @@ export function Sidebar({ page, onNavigate }: Props) {
 
       <div className={styles.spacer} />
 
-      <CreditsBlock />
+      <CreditsBlock onUpgrade={() => onNavigate('pricing')} />
 
       <div className={`${styles.divider} ${styles.dividerFlush}`} />
 

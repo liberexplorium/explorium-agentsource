@@ -3,7 +3,7 @@ import styles from './Sidebar.module.css';
 const REMAINING = 4_246_113;
 const TOTAL = 10_001_010;
 
-export function CreditsBlock() {
+export function CreditsBlock({ onUpgrade }: { onUpgrade: () => void }) {
   const pct = (REMAINING / TOTAL) * 100;
   const fmt = (n: number) => n.toLocaleString('en-US');
 
@@ -26,7 +26,7 @@ export function CreditsBlock() {
       <div className={styles.expiry}>
         Credits expire in 1233 days – Sep 25, 2029
       </div>
-      <a href="#" className={styles.upgrade}>Upgrade Package</a>
+      <button type="button" className={styles.upgrade} onClick={onUpgrade}>Upgrade Package</button>
     </div>
   );
 }
