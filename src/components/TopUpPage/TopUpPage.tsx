@@ -184,16 +184,19 @@ export function TopUpPage() {
               <option>Custom</option>
             </select>
             {isCustomMax && (
-              <input
-                type="number"
-                min={1}
-                step={1}
-                placeholder="Enter a number"
-                value={customMax}
-                onChange={(e) => setCustomMax(e.target.value)}
-                aria-label="Custom maximum top-up occurrences"
-                className={styles.customInput}
-              />
+              <>
+                <input
+                  type="number"
+                  min={1}
+                  step={1}
+                  placeholder="Enter a number"
+                  value={customMax}
+                  onChange={(e) => setCustomMax(e.target.value)}
+                  aria-label="Custom maximum top-up occurrences"
+                  className={styles.customInput}
+                />
+                <span className={styles.customInputSuffix}>times</span>
+              </>
             )}
           </div>
         </section>
