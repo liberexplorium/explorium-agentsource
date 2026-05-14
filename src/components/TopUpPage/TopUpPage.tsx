@@ -189,7 +189,7 @@ export function TopUpPage() {
                   type="number"
                   min={1}
                   step={1}
-                  placeholder="Enter a number"
+                  placeholder="99"
                   value={customMax}
                   onChange={(e) => setCustomMax(e.target.value)}
                   aria-label="Custom maximum top-up occurrences"
