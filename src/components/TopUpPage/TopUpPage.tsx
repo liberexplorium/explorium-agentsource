@@ -12,7 +12,7 @@ const PACKAGES: Array<{
   credits: string;
   color: 'teal' | 'indigo' | 'coral';
 }> = [
-  { key: 'starter', label: 'STARTER', price: '99',    cents: '.99', credits: '6K Credits',  color: 'teal'   },
+  { key: 'starter', label: 'STARTER', price: '99',    cents: '.99', credits: '2.5K Credits',  color: 'teal'   },
   { key: 'growth',  label: 'GROWTH',  price: '749',   cents: '.99', credits: '25K Credits', color: 'indigo' },
   { key: 'scale',   label: 'SCALE',   price: '7,499', cents: '.99', credits: '50K Credits', color: 'coral'  },
 ];
