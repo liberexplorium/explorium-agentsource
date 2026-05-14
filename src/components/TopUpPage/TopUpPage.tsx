@@ -155,6 +155,7 @@ export function TopUpPage() {
                     >
                       {selected && <CheckIcon />}
                       <span>{selected ? 'Selected' : 'Select'}</span>
+                      {selected && <span style={{ width: 14, flexShrink: 0 }} aria-hidden />}
                     </button>
                   </div>
                 </div>
