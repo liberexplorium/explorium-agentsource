@@ -184,7 +184,7 @@ export function TopUpPage() {
               <option>Custom</option>
             </select>
             {isCustomMax && (
-              <>
+              <div className={styles.customInputGroup}>
                 <input
                   type="number"
                   min={1}
@@ -196,7 +196,7 @@ export function TopUpPage() {
                   className={styles.customInput}
                 />
                 <span className={styles.customInputSuffix}>times</span>
-              </>
+              </div>
             )}
           </div>
         </section>

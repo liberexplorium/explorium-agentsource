@@ -240,10 +240,16 @@
   font-size: 14px;
   color: var(--text);
   background: var(--exp-white);
-  width: 160px;
+  width: calc(7ch + 28px);
 }
 .customInput:focus { outline: 2px solid var(--exp-teal-500); outline-offset: 1px; }
 .customInput::placeholder { color: var(--exp-n-500); }
+
+.customInputGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 
 .customInputSuffix {
   font-size: 14px;
