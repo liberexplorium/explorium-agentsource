@@ -12,9 +12,9 @@ const PACKAGES: Array<{
   credits: string;
   color: 'teal' | 'indigo' | 'coral';
 }> = [
-  { key: 'starter', label: 'STARTER', price: '99',    cents: '.99', credits: '2.5K Credits',  color: 'teal'   },
-  { key: 'growth',  label: 'GROWTH',  price: '749',   cents: '.99', credits: '25K Credits', color: 'indigo' },
-  { key: 'scale',   label: 'SCALE',   price: '7,499', cents: '.99', credits: '50K Credits', color: 'coral'  },
+  { key: 'starter', label: 'STARTER', price: '$99',    cents: '.99', credits: '2.5K Credits', color: 'teal'   },
+  { key: 'growth',  label: 'GROWTH',  price: '$749',   cents: '.99', credits: '25K Credits', color: 'indigo' },
+  { key: 'scale',   label: 'SCALE',   price: '$7,499', cents: '.99', credits: '50K Credits', color: 'coral'  },
 ];
 
 const THRESHOLDS: Threshold[] = [100, 200, 300, 400, 500];
@@ -139,7 +139,6 @@ export function TopUpPage() {
                   </div>
                   <div className={styles.pkgBody}>
                     <div className={styles.pkgPrice}>
-                      <span className={styles.pkgPriceCurrency}>$</span>
                       <span className={styles.pkgPriceMain}>{p.price}</span>
                       <span className={styles.pkgPriceTail}>
                         <span className={styles.pkgPriceCents}>{p.cents}</span>
@@ -147,6 +146,8 @@ export function TopUpPage() {
                       </span>
                     </div>
                     <p className={styles.pkgCredits}>{p.credits}</p>
+                  </div>
+                  <div className={styles.pkgFooter}>
                     <button
                       type="button"
                       className={selected ? styles.pkgBtnSelected : styles.pkgBtn}
