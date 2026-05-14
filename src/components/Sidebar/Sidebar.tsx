@@ -49,7 +49,7 @@ export function Sidebar({ page, onNavigate }: Props) {
       </div>
 
       <nav className={styles.nav}>
-        <NavItem icon={<HomeIcon />} label="Overview" active />
+        <NavItem icon={<HomeIcon />} label="Overview" active={page === 'overview'} />
         <NavItem icon={<BarChartIcon />} label="Usage" />
         <NavItem icon={<KeyIcon />} label="API Keys" />
         <NavItem icon={<PlaygroundIcon />} label="API Playground" />
