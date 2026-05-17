@@ -360,9 +360,10 @@
   .container { padding: 56px 20px 40px; gap: 20px; }
   .heroTitle { font-size: 40px; }
   .heroSubtitle { font-size: 16px; }
-  .tiers { grid-template-columns: 1fr; }
-  .tierCard + .tierCard { border-left: 1px solid #bdd6dc; border-top: 0; }
+  .tiers { grid-template-columns: 1fr; gap: 8px; }
+  .tierCard + .tierCard { border-left: 1px solid #bdd6dc; border-top: 1px solid #bdd6dc; }
   .tierCard:nth-child(2) { border-left: 1px solid #bdd6dc; }
+  .tierCard:nth-child(3) { border-top: 1px solid #bdd6dc; }
   .customInner {
     flex-direction: column;
     align-items: flex-start;

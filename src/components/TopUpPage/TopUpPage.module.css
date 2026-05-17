@@ -366,7 +366,8 @@
 @media (max-width: 900px) {
   .page { padding: 32px 24px; }
   .title { font-size: 28px; }
-  .packages { grid-template-columns: 1fr; }
+  .packages { grid-template-columns: 1fr; gap: 8px; }
+  .pkgCard + .pkgCard { border-left: 1px solid var(--line); border-top: 1px solid var(--line); }
   .actions { flex-direction: column; align-items: stretch; }
   .clearBtn, .saveBtn, .saveBtnDisabled { width: 100%; }
 }
