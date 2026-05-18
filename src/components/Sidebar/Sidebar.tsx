@@ -12,6 +12,7 @@ import {
   DocIcon,
   PricingIcon,
   CollapseIcon,
+  CloseIcon,
   PuzzleIcon,
   SqrtIcon,
   StackIcon,
@@ -22,15 +23,23 @@ type SidebarPage = 'overview' | 'billing' | 'topup' | 'account' | 'pricing';
 type Props = {
   page: SidebarPage;
   onNavigate: (page: SidebarPage) => void;
+  mobileOpen?: boolean;
+  onMobileClose?: () => void;
 };
 
-export function Sidebar({ page, onNavigate }: Props) {
+export function Sidebar({ page, onNavigate, mobileOpen, onMobileClose }: Props) {
   const [collapsed, setCollapsed] = useState(false);
+
+  function navigate(p: SidebarPage) {
+    onNavigate(p);
+    onMobileClose?.();
+  }
 
   return (
     <aside
       className={styles.sidebar}
       data-collapsed={collapsed || undefined}
+      data-mobile-open={mobileOpen || undefined}
     >
       <div className={styles.header}>
         <img
@@ -38,6 +47,7 @@ export function Sidebar({ page, onNavigate }: Props) {
           alt="Explorium Agentsource"
           className={styles.brand}
         />
+        {/* Desktop: collapse toggle */}
         <button
           className={styles.iconBtn}
           onClick={() => setCollapsed(!collapsed)}
@@ -46,10 +56,23 @@ export function Sidebar({ page, onNavigate }: Props) {
         >
           <CollapseIcon />
         </button>
+        {/* Mobile: close drawer */}
+        <button
+          className={styles.mobileCloseBtn}
+          onClick={onMobileClose}
+          aria-label="Close navigation"
+        >
+          <CloseIcon />
+        </button>
       </div>
 
       <nav className={styles.nav}>
-        <NavItem icon={<HomeIcon />} label="Overview" active={page === 'overview'} />
+        <NavItem
+          icon={<HomeIcon />}
+          label="Overview"
+          active={page === 'overview'}
+          onClick={() => navigate('overview')}
+        />
         <NavItem icon={<BarChartIcon />} label="Usage" />
         <NavItem icon={<KeyIcon />} label="API Keys" />
         <NavItem icon={<PlaygroundIcon />} label="API Playground" />
@@ -58,7 +81,7 @@ export function Sidebar({ page, onNavigate }: Props) {
           icon={<PricingIcon />}
           label="Pricing"
           active={page === 'pricing'}
-          onClick={() => onNavigate('pricing')}
+          onClick={() => navigate('pricing')}
         />
       </nav>
 
@@ -93,16 +116,16 @@ export function Sidebar({ page, onNavigate }: Props) {
 
       <div className={styles.spacer} />
 
-      <CreditsBlock onUpgrade={() => onNavigate('pricing')} />
+      <CreditsBlock onUpgrade={() => navigate('pricing')} />
 
       <div className={`${styles.divider} ${styles.dividerFlush}`} />
 
       <UserChip
         active={page === 'billing' || page === 'topup' || page === 'account'}
-        onSelectPricing={() => onNavigate('pricing')}
-        onSelectBilling={() => onNavigate('billing')}
-        onSelectTopUp={() => onNavigate('topup')}
-        onSelectAccount={() => onNavigate('account')}
+        onSelectPricing={() => navigate('pricing')}
+        onSelectBilling={() => navigate('billing')}
+        onSelectTopUp={() => navigate('topup')}
+        onSelectAccount={() => navigate('account')}
       />
     </aside>
   );

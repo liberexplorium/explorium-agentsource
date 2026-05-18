@@ -1,0 +1,74 @@
+.layout {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.main {
+  flex: 1;
+  height: 100vh;
+  overflow-y: auto;
+  background: var(--exp-white);
+}
+
+/* Hidden on desktop */
+.mobileTopBar {
+  display: none;
+}
+
+.backdrop {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /* Top bar: matches Figma node 50:282 */
+  .mobileTopBar {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 73px;
+    z-index: 50;
+    background: #0a1b21;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 22px;
+    border-bottom: 1px solid #cad5e2;
+    flex-shrink: 0;
+  }
+
+  .mobileLogo {
+    display: block;
+    width: 176px;
+    height: 40px;
+    object-fit: contain;
+    object-position: left center;
+  }
+
+  .menuBtn {
+    background: transparent;
+    border: 0;
+    color: var(--exp-cream);
+    padding: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .menuBtn:hover { background: var(--side-row-hover); }
+
+  .main {
+    padding-top: 73px;
+  }
+
+  .backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    background: rgba(0, 0, 0, 0.55);
+  }
+}

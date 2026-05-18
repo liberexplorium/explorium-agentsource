@@ -1,10 +1,13 @@
+import { useState } from 'react';
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
+import styles from './App.module.css';
 import { Sidebar } from './components/Sidebar/Sidebar';
 import { BillingPage } from './components/BillingPage/BillingPage';
 import { TopUpPage } from './components/TopUpPage/TopUpPage';
 import { AccountSettingsPage } from './components/AccountSettingsPage/AccountSettingsPage';
 import { AddPaymentMethodPage } from './components/AddPaymentMethodPage/AddPaymentMethodPage';
 import { PricingPage } from './components/PricingPage/PricingPage';
+import { MenuIcon } from './components/Sidebar/icons';
 
 export type Page = 'overview' | 'billing' | 'topup' | 'account' | 'pricing';
 
@@ -27,6 +30,7 @@ const PATH_TO_PAGE: Record<string, Page> = {
 export default function App() {
   const location = useLocation();
   const navigate = useNavigate();
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   // Standalone routes — render without the sidebar/main shell
   if (location.pathname === '/add-payment-method') {
@@ -40,16 +44,41 @@ export default function App() {
   }
 
   return (
-    <div style={{ display: 'flex', height: '100vh', overflow: 'hidden' }}>
-      <Sidebar page={page} onNavigate={setPage} />
-      <main
-        style={{
-          flex: 1,
-          height: '100vh',
-          overflowY: 'auto',
-          background: 'var(--exp-white)',
-        }}
-      >
+    <div className={styles.layout}>
+      {/* Mobile top bar — hidden on desktop */}
+      <header className={styles.mobileTopBar} aria-label="Mobile navigation">
+        <img
+          src="/explorium-agentsource-logotype.svg"
+          alt="Explorium Agentsource"
+          className={styles.mobileLogo}
+        />
+        <button
+          className={styles.menuBtn}
+          onClick={() => setMobileNavOpen(true)}
+          aria-label="Open navigation"
+          aria-expanded={mobileNavOpen}
+        >
+          <MenuIcon />
+        </button>
+      </header>
+
+      {/* Backdrop — closes drawer on tap */}
+      {mobileNavOpen && (
+        <div
+          className={styles.backdrop}
+          onClick={() => setMobileNavOpen(false)}
+          aria-hidden="true"
+        />
+      )}
+
+      <Sidebar
+        page={page}
+        onNavigate={setPage}
+        mobileOpen={mobileNavOpen}
+        onMobileClose={() => setMobileNavOpen(false)}
+      />
+
+      <main className={styles.main}>
         <Routes>
           <Route path="/" element={null} />
           <Route path="/billing" element={<BillingPage />} />
