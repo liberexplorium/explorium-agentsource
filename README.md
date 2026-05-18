@@ -1,8 +1,6 @@
 # Explorium Agentsource Admin (prototype)
 
-Vite + React + TypeScript prototype of the Agentsource Admin UI. Currently
-implements the left sidebar (with collapsible state, profile submenu) and a
-Billing / Invoices page reachable from the profile menu.
+Vite + React + TypeScript prototype of the Agentsource Admin UI.
 
 ## Run locally
 
