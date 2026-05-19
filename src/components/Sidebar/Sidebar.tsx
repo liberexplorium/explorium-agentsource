@@ -16,9 +16,10 @@ import {
   PuzzleIcon,
   SqrtIcon,
   StackIcon,
+  PeopleIcon,
 } from './icons';
 
-type SidebarPage = 'overview' | 'billing' | 'topup' | 'account' | 'pricing';
+type SidebarPage = 'overview' | 'billing' | 'topup' | 'account' | 'pricing' | 'members';
 
 type Props = {
   page: SidebarPage;
@@ -82,6 +83,12 @@ export function Sidebar({ page, onNavigate, mobileOpen, onMobileClose }: Props) 
           label="Pricing"
           active={page === 'pricing'}
           onClick={() => navigate('pricing')}
+        />
+        <NavItem
+          icon={<PeopleIcon />}
+          label="Members"
+          active={page === 'members'}
+          onClick={() => navigate('members')}
         />
       </nav>
 

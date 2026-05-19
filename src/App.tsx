@@ -7,9 +7,10 @@ import { TopUpPage } from './components/TopUpPage/TopUpPage';
 import { AccountSettingsPage } from './components/AccountSettingsPage/AccountSettingsPage';
 import { AddPaymentMethodPage } from './components/AddPaymentMethodPage/AddPaymentMethodPage';
 import { PricingPage } from './components/PricingPage/PricingPage';
+import { MembersPage } from './components/MembersPage/MembersPage';
 import { MenuIcon } from './components/Sidebar/icons';
 
-export type Page = 'overview' | 'billing' | 'topup' | 'account' | 'pricing';
+export type Page = 'overview' | 'billing' | 'topup' | 'account' | 'pricing' | 'members';
 
 const PAGE_TO_PATH: Record<Page, string> = {
   overview: '/',
@@ -17,6 +18,7 @@ const PAGE_TO_PATH: Record<Page, string> = {
   topup: '/top-up-credits',
   account: '/account-settings',
   pricing: '/pricing',
+  members: '/members',
 };
 
 const PATH_TO_PAGE: Record<string, Page> = {
@@ -25,6 +27,7 @@ const PATH_TO_PAGE: Record<string, Page> = {
   '/top-up-credits': 'topup',
   '/account-settings': 'account',
   '/pricing': 'pricing',
+  '/members': 'members',
 };
 
 export default function App() {
@@ -85,6 +88,7 @@ export default function App() {
           <Route path="/top-up-credits" element={<TopUpPage />} />
           <Route path="/account-settings" element={<AccountSettingsPage />} />
           <Route path="/pricing" element={<PricingPage />} />
+          <Route path="/members" element={<MembersPage />} />
           <Route path="*" element={null} />
         </Routes>
       </main>
